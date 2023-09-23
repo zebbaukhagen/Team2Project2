@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 322665847722061931}
   m_Layer: 0
   m_Name: SwitchButton
-  m_TagString: Untagged
+  m_TagString: SwitchButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,8 +104,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 6.9227595, z: 1}
+  m_Center: {x: 0, y: 2.961378, z: 0}
 --- !u!114 &322665847722061931
 MonoBehaviour:
   m_ObjectHideFlags: 0
