@@ -1,41 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    private Vector2 move;
+    public float speed = 5f;  // Movement speed
+    public float rotationSpeed = 0.15f;  // Speed of rotation
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        move = context.ReadValue<Vector2>();
-    }
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Get the Rigidbody component attached to the player GameObject
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
-    }
+        // Read input from WASD keys
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
-    public void MovePlayer()
-    {
-        Vector3 movement = new Vector3(move.x, 0f, move.y);
+        // Calculate the movement vector
+        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput);
 
-        // Only update rotation if there is some movement.
+        // Rotate the player to face the direction of movement
         if (movement != Vector3.zero)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+            Quaternion desiredRotation = Quaternion.LookRotation(movement);
+            transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed);
         }
+    }
 
-        // This line will be executed regardless of the above condition.
-        transform.Translate(speed * Time.deltaTime * movement, Space.World);
+    // FixedUpdate is called once per physics frame
+    void FixedUpdate()
+    {
+        // Read input from WASD keys
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        // Calculate the movement vector
+        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput);
+
+        // Move the player using Rigidbody
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
 }
