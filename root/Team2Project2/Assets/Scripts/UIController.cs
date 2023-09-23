@@ -1,0 +1,65 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
+
+
+
+
+
+public class UIController : MonoBehaviour
+{
+    [SerializeField] private GameObject instructionsPanel;
+    private static UIController instance;
+    [SerializeField] private static UIController Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<UIController>();
+                if (instance == null)
+                {
+                    GameObject singletonObject = new GameObject("UIController");
+                    instance = singletonObject.AddComponent<UIController>();
+                }
+            }
+            return instance;
+        }
+    }
+
+    void start()
+    {
+        instructionsPanel.SetActive(false);
+    }
+
+    private void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+        
+    }
+
+    private void OffloadScene(string sceneName)
+    {
+        SceneManager.UnloadSceneAsync(sceneName);
+    }
+    
+
+    public void StartGame()
+    {
+        LoadScene("LevelOne");
+        OffloadScene("MainMenu");
+    }
+
+    private void OpenInstructions()
+    {
+        instructionsPanel.SetActive(true);
+    }
+
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Game Has Been Quit");
+    }
+}
