@@ -118,4 +118,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989734801a3d9384cb3c2ba73de6800c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listOfConnectedTiles: []
+  listOfConnectedTiles:
+  - {fileID: 0}
