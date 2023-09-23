@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 936701837830138910}
   m_Layer: 0
   m_Name: SwitchTile
-  m_TagString: Untagged
+  m_TagString: SwitchTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,3 +120,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighboringTiles: []
   activeState: 0
+  onMaterial: {fileID: 2100000, guid: 9209d6036d144d445924248d6df3ea72, type: 2}
+  offMaterial: {fileID: 2100000, guid: 91e39add4e96b014eaaa8fae0902730f, type: 2}
