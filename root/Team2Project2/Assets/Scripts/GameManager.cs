@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     //[SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private PlayerController playerController;
     //public CamMouseLook camMouseLook;
-    [SerializeField] private static bool backToMainMenu = false;
+    //[SerializeField] private static bool backToMainMenu = false;
     [SerializeField] private static bool togglePauseGame;
 
     // Start is called before the first frame update
@@ -56,6 +56,6 @@ public class GameManager : MonoBehaviour
         //camMouseLook.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
-        backToMainMenu = true;
+        //backToMainMenu = true;
     }
 }
