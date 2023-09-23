@@ -5,7 +5,12 @@ using UnityEngine;
 public class SwitchButton : MonoBehaviour
 {
     [SerializeField] List<SwitchTile> listOfConnectedTiles = new();
+    private SwitchPuzzle parentPuzzle;
 
+    private void Awake()
+    {
+        parentPuzzle = GetComponentInParent<SwitchPuzzle>();
+    }
 
     private void ToggleConnectedTileStates()
     {
@@ -23,6 +28,7 @@ public class SwitchButton : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             ToggleConnectedTileStates();
+            parentPuzzle.CheckForSolution();
         }
     }
 }

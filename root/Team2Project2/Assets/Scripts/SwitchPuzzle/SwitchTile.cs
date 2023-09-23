@@ -6,18 +6,26 @@ using UnityEngine;
 public class SwitchTile : MonoBehaviour
 {
     [SerializeField] private List<SwitchTile> neighboringTiles = new();
-    [SerializeField] private bool activeState;
+    [SerializeField] private bool activeState = false;
     [SerializeField] private Material onMaterial;
     [SerializeField] private Material offMaterial;
+    private SwitchPuzzle parentPuzzle;
 
     private Renderer myRenderer;
 
     private void Awake()
     {
         myRenderer = GetComponent<Renderer>();
+        parentPuzzle = GetComponentInParent<SwitchPuzzle>();
+        parentPuzzle.AddChildTileToList(this);
+        ChangeMaterial();
     }
 
-    public bool ActiveState { get; private set; }
+    public bool ActiveState
+    {
+        get => activeState;
+        private set => activeState = value;
+    }
 
     public void ToggleByProximity()
     {

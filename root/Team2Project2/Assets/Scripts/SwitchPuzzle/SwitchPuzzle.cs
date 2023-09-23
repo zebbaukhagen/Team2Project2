@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class SwitchPuzzle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private List<SwitchTile> listOfTiles = new();
+    private bool puzzleSolved = false;
+
+    public void CheckForSolution()
     {
-        
+        if (listOfTiles.Count(c => c.ActiveState) == listOfTiles.Count)
+        {
+            Debug.Log("Puzzle Solved!");
+            puzzleSolved = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddChildTileToList(SwitchTile tile)
     {
-        
+        listOfTiles.Add(tile);
     }
 }
