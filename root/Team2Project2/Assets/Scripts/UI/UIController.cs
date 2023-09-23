@@ -3,10 +3,6 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-
-
-
-
 public class UIController : MonoBehaviour
 {
     [SerializeField] private GameObject instructionsPanel;
@@ -51,9 +47,9 @@ public class UIController : MonoBehaviour
         OffloadScene("MainMenu");
     }
 
-    private void OpenInstructions()
+    public void OpenInstructions()
     {
-        instructionsPanel.SetActive(true);
+        instructionsPanel.SetActive(!instructionsPanel.activeSelf); 
     }
 
 

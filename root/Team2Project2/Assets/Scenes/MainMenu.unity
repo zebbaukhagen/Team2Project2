@@ -303,7 +303,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 117869944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c45b3919aa42c34d90091f40a5b9d82, type: 3}
+  m_Script: {fileID: 11500000, guid: b6f2a59a341484b4ea3abd363b34eac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   instructionsPanel: {fileID: 179392414}
@@ -324,7 +324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &179392415
 MonoBehaviour:
   m_ObjectHideFlags: 0
