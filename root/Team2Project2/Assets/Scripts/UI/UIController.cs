@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class UIController : MonoBehaviour
 {
     [SerializeField] private GameObject instructionsPanel;
+    [SerializeField] private GameObject settingsMenu;
     private static UIController instance;
     [SerializeField] private static UIController Instance
     {
@@ -50,6 +51,11 @@ public class UIController : MonoBehaviour
     public void OpenInstructions()
     {
         instructionsPanel.SetActive(!instructionsPanel.activeSelf); 
+    }
+
+    public void OpenSettings()
+    {
+        settingsMenu.SetActive(!settingsMenu.activeSelf);
     }
 
 
