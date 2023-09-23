@@ -22,7 +22,6 @@ public class SwitchButton : MonoBehaviour
         // activates toggling on player collision
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Switch activated by Player.");
             ToggleConnectedTileStates();
         }
     }
