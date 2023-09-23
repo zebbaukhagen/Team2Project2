@@ -29,10 +29,13 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movement = new Vector3(move.x, 0f, move.y);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+        // Only update rotation if there is some movement.
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+        }
 
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        // This line will be executed regardless of the above condition.
+        transform.Translate(speed * Time.deltaTime * movement, Space.World);
     }
-
-    
 }
