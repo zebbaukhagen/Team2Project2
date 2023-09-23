@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;  // Movement speed
-    public float rotationSpeed = 0.15f;  // Speed of rotation
-    public float inputThreshold = 0.1f;  // Threshold for input to be considered significant
+    [SerializeField] private float speed = 5f;  // Movement speed
+    [SerializeField] private float rotationSpeed = 0.15f;  // Speed of rotation
+    private float inputThreshold = 0.1f;  // Threshold for input to be considered significant
     private Vector3 movement;
     private Rigidbody rb;
 
