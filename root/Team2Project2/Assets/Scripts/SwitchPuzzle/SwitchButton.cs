@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class SwitchButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] List<SwitchTile> listOfConnectedTiles = new();
+
+
+    private void ToggleConnectedTileStates()
     {
-        
+        // toggles the states of all tiles connected to this switch
+        foreach (SwitchTile tile in listOfConnectedTiles)
+        {
+            tile.ToggleBySwitch();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        // activates toggling on player collision
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Switch activated by Player.");
+            ToggleConnectedTileStates();
+        }
     }
 }

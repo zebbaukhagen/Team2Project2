@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class SwitchTile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private List<SwitchTile> neighboringTiles = new();
+    [SerializeField] private bool activeState;
+
+    public bool ActiveState { get; private set; }
+
+    public void ToggleByProximity()
     {
-        
+        // toggles state locally only, to be called from another tile.
+        ActiveState = !ActiveState;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ToggleBySwitch()
     {
-        
+        // toggles state from switch, also toggles neighbors
+        ActiveState = !ActiveState;
+        foreach (SwitchTile tile in neighboringTiles)
+        {
+            tile.ToggleByProximity();
+        }
     }
 }
