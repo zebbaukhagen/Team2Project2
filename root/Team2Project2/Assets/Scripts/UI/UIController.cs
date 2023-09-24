@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class UIController : MonoBehaviour
 {
+    [SerializeField] private GameObject pauseMenu;   
     [SerializeField] private GameObject instructionsPanel;
     [SerializeField] private GameObject settingsMenu;
     private static UIController instance;
@@ -28,6 +29,8 @@ public class UIController : MonoBehaviour
     void start()
     {
         instructionsPanel.SetActive(false);
+        settingsMenu.SetActive(false);
+        pauseMenu.SetActive(false);
     }
 
     private void LoadScene(string sceneName)
