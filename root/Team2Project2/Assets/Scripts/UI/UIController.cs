@@ -33,13 +33,13 @@ public class UIController : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
-    private void LoadScene(string sceneName)
+    public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
         
     }
 
-    private void OffloadScene(string sceneName)
+    public void OffloadScene(string sceneName)
     {
         SceneManager.UnloadSceneAsync(sceneName);
     }

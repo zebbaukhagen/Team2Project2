@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private TMP_Text levelPrompt;
+    [SerializeField] private UIController uiController;
+    
 
     //[SerializeField] private static bool backToMainMenu = false;
     [SerializeField] private static bool togglePauseGame;
@@ -49,18 +51,18 @@ public class PauseMenu : MonoBehaviour
             {
                 levelPrompt.text = "THIS IS A TEST!";
             }
-            //else if(SceneManager.GetActiveScene().name == "LevelOne")
-            //{
-            //    levelPrompt.text = "Level 1: Escape The Flames! ";
-            //}
-            //if(SceneManager.GetActiveScene().name == "LevelTwo")
-            //{
-            //    levelPrompt.text = "Level 2: Connect The Conduits! ";
-            //}
-            //else if (SceneManager.GetActiveScene().name == "LevelThree")
-            //{
-            //    levelPrompt.text = "Level 1: Escape The Roomba! ";
-            //}
+            else if (SceneManager.GetActiveScene().name == "LevelOne")
+            {
+                levelPrompt.text = "Level 1: Escape The Flames! ";
+            }
+            if (SceneManager.GetActiveScene().name == "LevelTwo")
+            {
+                levelPrompt.text = "Level 2: Connect The Conduits! ";
+            }
+            else if (SceneManager.GetActiveScene().name == "LevelThree")
+            {
+                levelPrompt.text = "Level 1: Escape The Roomba! ";
+            }
         }
         else
         {
@@ -75,9 +77,9 @@ public class PauseMenu : MonoBehaviour
         settingsMenu.SetActive(!settingsMenu.activeSelf);
     }
 
-    private void BackToMainMenu()
+    public void BackToMainMenu()
     {
-        //sceneLoader.LoadScene(0);
+        uiController.LoadScene("MainMenu");
         pauseMenu.SetActive(false);
        // playerController.enabled = false;
         Cursor.lockState = CursorLockMode.None;
