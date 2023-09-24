@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
 
     //[SerializeField] private static bool backToMainMenu = false;
     [SerializeField] private static bool togglePauseGame;
-
+    [SerializeField] private static bool pauseGame;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +32,14 @@ public class PauseMenu : MonoBehaviour
             PauseGame();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            BackToMainMenu();
+            pauseGame = !pauseGame;
+            if(pauseGame == true)
+            {
+                BackToMainMenu();
+            }
+            
         }
     }
 
@@ -47,19 +52,16 @@ public class PauseMenu : MonoBehaviour
             pauseMenu.SetActive(true);
             //playerController.enabled = false;
             Time.timeScale = 0f;
-            if(SceneManager.GetActiveScene().name == "MainMenu")
-            {
-                levelPrompt.text = "THIS IS A TEST!";
-            }
-            else if (SceneManager.GetActiveScene().name == "LevelOne")
+          
+            if (SceneManager.GetActiveScene().name == "LevelOne")
             {
                 levelPrompt.text = "Level 1: Escape The Flames! ";
             }
-            if (SceneManager.GetActiveScene().name == "LevelTwo")
+            else if (SceneManager.GetActiveScene().name == "LevelTwo")
             {
                 levelPrompt.text = "Level 2: Connect The Conduits! ";
             }
-            else if (SceneManager.GetActiveScene().name == "LevelThree")
+            if(SceneManager.GetActiveScene().name == "LevelThree")
             {
                 levelPrompt.text = "Level 1: Escape The Roomba! ";
             }
