@@ -7,7 +7,7 @@ public class FireController : MonoBehaviour
     [SerializeField] private ParticleSystem ps; // set in editor
     [SerializeField] private GameObject hitBox; // set in editor
     private SwitchPuzzle parentPuzzle;
-    private bool particleSystemActive = true;
+    [SerializeField] private bool particleSystemActive = true;
 
     private void Awake()
     {
