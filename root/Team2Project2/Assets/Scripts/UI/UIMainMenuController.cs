@@ -1,49 +1,47 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class UIController : MonoBehaviour
+public class UIMainMenuController : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseMenu;   
     [SerializeField] private GameObject instructionsPanel;
     [SerializeField] private GameObject settingsMenu;
-    private static UIController instance;
-    [SerializeField] private static UIController Instance
+    private static UIMainMenuController instance;
+
+    public static UIMainMenuController Instance
     {
         get
         {
             if (instance == null)
             {
-                instance = FindObjectOfType<UIController>();
+                instance = FindObjectOfType<UIMainMenuController>();
                 if (instance == null)
                 {
-                    GameObject singletonObject = new GameObject("UIController");
-                    instance = singletonObject.AddComponent<UIController>();
+                    GameObject singletonObject = new GameObject("UIMainMenuController");
+                    instance = singletonObject.AddComponent<UIMainMenuController>();
                 }
             }
             return instance;
         }
     }
 
-    void start()
+    private void Start()
     {
         instructionsPanel.SetActive(false);
         settingsMenu.SetActive(false);
-        pauseMenu.SetActive(false);
     }
 
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-        
     }
 
     public void OffloadScene(string sceneName)
     {
         SceneManager.UnloadSceneAsync(sceneName);
     }
-    
 
     public void StartGame()
     {
@@ -53,7 +51,7 @@ public class UIController : MonoBehaviour
 
     public void OpenInstructions()
     {
-        instructionsPanel.SetActive(!instructionsPanel.activeSelf); 
+        instructionsPanel.SetActive(!instructionsPanel.activeSelf);
     }
 
     public void OpenSettings()
@@ -61,10 +59,9 @@ public class UIController : MonoBehaviour
         settingsMenu.SetActive(!settingsMenu.activeSelf);
     }
 
-
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Game Has Been Quit");
+        Debug.Log("Game has been quit");
     }
 }

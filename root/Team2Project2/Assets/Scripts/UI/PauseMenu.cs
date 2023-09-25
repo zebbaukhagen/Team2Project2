@@ -7,17 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    //[SerializeField] private SceneLoader sceneLoader;
-    //[SerializeField] private PlayerController playerController;
+    [SerializeField] private PlayerController playerController;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private TMP_Text levelPrompt;
-    [SerializeField] private UIController uiController;
-    
-
-    //[SerializeField] private static bool backToMainMenu = false;
+    [SerializeField] private UIMainMenuController uiController;
     [SerializeField] private static bool togglePauseGame;
     [SerializeField] private static bool pauseGame;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +48,7 @@ public class PauseMenu : MonoBehaviour
         if (togglePauseGame == true)
         {
             pauseMenu.SetActive(true);
-            //playerController.enabled = false;
+            playerController.enabled = false;
             Time.timeScale = 0f;
           
             if (SceneManager.GetActiveScene().name == "LevelOne")
@@ -69,7 +67,7 @@ public class PauseMenu : MonoBehaviour
         else
         {
             pauseMenu.SetActive(false);
-            //playerController.enabled = true;
+            playerController.enabled = true;
             Time.timeScale = 1f;
         }
     }
@@ -83,7 +81,7 @@ public class PauseMenu : MonoBehaviour
     {
         uiController.LoadScene("MainMenu");
         pauseMenu.SetActive(false);
-       // playerController.enabled = false;
+        playerController.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
     }
