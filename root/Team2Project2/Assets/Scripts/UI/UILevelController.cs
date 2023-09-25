@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class UILevelController : MonoBehaviour
 {
-    [SerializeField] private PlayerController playerController;  // Make sure to assign this in the Unity Editor
     [SerializeField] private GameObject settingsMenu;
-    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject pauseMenuPanel;
     private static UILevelController instance;
+    [SerializeField] private PauseMenu pauseMenu;
 
     public static UILevelController Instance
     {
@@ -29,18 +29,26 @@ public class UILevelController : MonoBehaviour
     void Start()
     {
         settingsMenu.SetActive(false);
-        pauseMenu.SetActive(false);
+        pauseMenuPanel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // You can add update logic here if needed
+        OpenPauseMenu();
     }
 
     public void OpenSettings()
     {
         settingsMenu.SetActive(!settingsMenu.activeSelf);
+    }
+    
+    private void OpenPauseMenu()
+    {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            pauseMenu.PauseGame();
+        }
     }
 
     public void QuitGame()

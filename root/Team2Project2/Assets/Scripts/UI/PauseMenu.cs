@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private TMP_Text levelPrompt;
-    [SerializeField] private UIMainMenuController uiController;
+    [SerializeField] private UILevelController uiController;
     [SerializeField] private static bool togglePauseGame;
     [SerializeField] private static bool pauseGame;
     
@@ -70,6 +70,11 @@ public class PauseMenu : MonoBehaviour
             playerController.enabled = true;
             Time.timeScale = 1f;
         }
+    }
+    
+    public void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
     }
 
     public void OpenSettings()
