@@ -5,8 +5,10 @@ public class SwitchButton : MonoBehaviour
 {
     [SerializeField] private List<SwitchTile> listOfConnectedTiles = new();
     [SerializeField] private List<Door> listOfConnectedDoors = new();
+    [SerializeField] private List<FireController> listOfConnectedFires = new();
 
     private bool hasConnectedDoors = false;
+    private bool hasConnectedFires = false;
 
     private SwitchPuzzle parentPuzzle;
 
@@ -14,6 +16,7 @@ public class SwitchButton : MonoBehaviour
     {
         parentPuzzle = GetComponentInParent<SwitchPuzzle>();
         if (listOfConnectedDoors.Count > 0) hasConnectedDoors = true;
+        if (listOfConnectedFires.Count > 0) hasConnectedFires = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,6 +29,10 @@ public class SwitchButton : MonoBehaviour
             if (hasConnectedDoors)
             {
                 ToggleConnecteDoorStates();
+            }
+            if (hasConnectedFires)
+            {
+                ToggleConnectedFireStates();
             }
         }
     }
@@ -44,6 +51,15 @@ public class SwitchButton : MonoBehaviour
         foreach (Door door in listOfConnectedDoors)
         {
             door.ToggleDoor();
+        }
+    }
+
+    private void ToggleConnectedFireStates()
+    {
+        // toggles state of connected fires
+        foreach (FireController fire in listOfConnectedFires)
+        {
+            fire.ToggleParticleSystem();
         }
     }
 }
