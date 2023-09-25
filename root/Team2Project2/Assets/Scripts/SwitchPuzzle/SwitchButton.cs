@@ -28,8 +28,6 @@ public class SwitchButton : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player collided with button.");
-            ToggleConnectedTileStates();
-            parentPuzzle.CheckForSolution();
             if (hasConnectedTiles)
             {
                 Debug.Log("Toggling connected doors.");
@@ -45,6 +43,7 @@ public class SwitchButton : MonoBehaviour
                 Debug.Log("Toggling connected fires.");
                 ToggleConnectedFireStates();
             }
+            parentPuzzle.CheckForSolution();
         }
     }
     private void ToggleConnectedTileStates()
