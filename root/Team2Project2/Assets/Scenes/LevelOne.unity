@@ -208,8 +208,8 @@ Transform:
   m_GameObject: {fileID: 313739585}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30, y: 29.167515, z: -13}
-  m_LocalScale: {x: 0.32288918, y: 2.6104, z: 32.244694}
+  m_LocalPosition: {x: -31, y: 29.167515, z: -13}
+  m_LocalScale: {x: 2.0610662, y: 2.6104, z: 32.244694}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2123647148}
@@ -324,7 +324,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -14, y: 29.167515, z: -29}
-  m_LocalScale: {x: 0.33599946, y: 2.6104, z: 32.244694}
+  m_LocalScale: {x: 1.7644005, y: 2.6104, z: 32.244694}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2123647148}
@@ -678,7 +678,7 @@ Transform:
   m_GameObject: {fileID: 750743486}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.120094396, y: 119.8, z: 0.2}
+  m_LocalPosition: {x: -0.120094396, y: 15, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1163,7 +1163,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -18, y: 29.167515, z: -17}
-  m_LocalScale: {x: 0.50933164, y: 2.6104, z: 23.778849}
+  m_LocalScale: {x: 0.50933164, y: 2.6104, z: 24.827497}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2123647148}
@@ -2277,10 +2277,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1445468769351051191, guid: a35edf3d847582e488fd1aef783dd828, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 1643683751195635902, guid: a35edf3d847582e488fd1aef783dd828, type: 3}
       propertyPath: m_Name
       value: Rat
@@ -2325,12 +2321,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8165995463008224673, guid: a35edf3d847582e488fd1aef783dd828, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3418707045407064587, guid: a35edf3d847582e488fd1aef783dd828, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
