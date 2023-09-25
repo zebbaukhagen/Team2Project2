@@ -1,17 +1,32 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SwitchButton : MonoBehaviour
 {
     [SerializeField] List<SwitchTile> listOfConnectedTiles = new();
+    [SerializeField] List<Door> listOfConnectedDoors = new();
+    private bool hasConnectedDoors = false;
     private SwitchPuzzle parentPuzzle;
 
     private void Awake()
     {
         parentPuzzle = GetComponentInParent<SwitchPuzzle>();
+        if (listOfConnectedDoors.Count > 0) hasConnectedDoors = true;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        // activates toggling on player collision
+        if (other.CompareTag("Player"))
+        {
+            ToggleConnectedTileStates();
+            parentPuzzle.CheckForSolution();
+            if (hasConnectedDoors)
+            {
+                ToggleConnecteDoorStates();
+            }
+        }
+    }
     private void ToggleConnectedTileStates()
     {
         // toggles the states of all tiles connected to this switch
@@ -21,14 +36,11 @@ public class SwitchButton : MonoBehaviour
         }
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    private void ToggleConnecteDoorStates()
     {
-        // activates toggling on player collision
-        if (other.CompareTag("Player"))
+        foreach (Door door in listOfConnectedDoors)
         {
-            ToggleConnectedTileStates();
-            parentPuzzle.CheckForSolution();
+            door.ToggleDoor();
         }
     }
 }
