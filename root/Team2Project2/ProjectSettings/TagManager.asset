@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SwitchButton
   - SwitchTile
+  - KillBox
   layers:
   - Default
   - TransparentFX
