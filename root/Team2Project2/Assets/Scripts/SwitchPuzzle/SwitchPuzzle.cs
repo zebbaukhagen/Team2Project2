@@ -23,7 +23,6 @@ public class SwitchPuzzle : MonoBehaviour
                 puzzleSolved = true;
                 OpenFinishDoor();
                 TurnFiresOff();
-
             }
         }
     }
