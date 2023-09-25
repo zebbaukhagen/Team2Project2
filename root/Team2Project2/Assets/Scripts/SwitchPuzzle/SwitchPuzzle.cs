@@ -6,22 +6,47 @@ using System.Linq;
 public class SwitchPuzzle : MonoBehaviour
 {
     [SerializeField] private List<SwitchTile> listOfTiles = new();
-    [SerializeField] private Door finishDoor; 
+    [SerializeField] private List<FireController> listOfFireControllers = new();
+    [SerializeField] private Door finishDoor;
+    private bool puzzleSolved = false;
+    
 
     public void CheckForSolution()
     {
-        // Check if all tiles in the list of tiles are true
-        if (listOfTiles.Count(c => c.ActiveState) == listOfTiles.Count)
+        if (!puzzleSolved)
         {
-            // if so, puzzle is solved
-            Debug.Log("Puzzle Solved!");
-            if (finishDoor == null) { Debug.Log("No door attached."); }
-            else
+            // Check if all tiles in the list of tiles are true
+            if (listOfTiles.Count(c => c.ActiveState) == listOfTiles.Count)
             {
-                // open the final door
-                finishDoor.SetDoorStatus(DoorStatus.OPEN);
-            }
+                // if so, puzzle is solved
+                Debug.Log("Puzzle Solved!");
+                puzzleSolved = true;
+                OpenFinishDoor();
+                TurnFiresOff();
 
+            }
+        }
+    }
+
+    private void OpenFinishDoor()
+    {
+        if (finishDoor == null) { Debug.Log("No door attached."); }
+        else
+        {
+            // open the final door
+            finishDoor.SetDoorStatus(DoorStatus.OPEN);
+        }
+    }
+
+    private void TurnFiresOff()
+    {
+        if (listOfFireControllers.Count == 0) { Debug.Log("No fires attached."); }
+        else
+        {
+            foreach (FireController fire in listOfFireControllers)
+            {
+                fire.ToggleParticleSystem();
+            }
         }
     }
 
@@ -29,5 +54,11 @@ public class SwitchPuzzle : MonoBehaviour
     {
         // method to be called from tiles
         listOfTiles.Add(tile);
+    }
+
+    public void AddChildFireToList(FireController fire)
+    {
+        // to be called from FireControllers
+        listOfFireControllers.Add(fire);
     }
 }
