@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class SwitchButton : MonoBehaviour
 {
-    [SerializeField] List<SwitchTile> listOfConnectedTiles = new();
-    [SerializeField] List<Door> listOfConnectedDoors = new();
+    [SerializeField] private List<SwitchTile> listOfConnectedTiles = new();
+    [SerializeField] private List<Door> listOfConnectedDoors = new();
+
     private bool hasConnectedDoors = false;
+
     private SwitchPuzzle parentPuzzle;
 
     private void Awake()
@@ -38,6 +40,7 @@ public class SwitchButton : MonoBehaviour
 
     private void ToggleConnecteDoorStates()
     {
+        // toggles states of all connected doors
         foreach (Door door in listOfConnectedDoors)
         {
             door.ToggleDoor();
