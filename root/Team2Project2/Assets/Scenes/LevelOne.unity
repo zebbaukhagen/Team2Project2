@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listOfTiles: []
+  finishDoor: {fileID: 541447245}
 --- !u!1 &313739585
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 541447243}
   - component: {fileID: 541447244}
+  - component: {fileID: 541447245}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -454,6 +456,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &541447245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541447242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d877e1f1899c0142a09e4674761b692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  doorStatus: 1
 --- !u!1001 &698255760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -678,7 +694,7 @@ Transform:
   m_GameObject: {fileID: 750743486}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.120094396, y: 15, z: -1}
+  m_LocalPosition: {x: -0.120094396, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1268,7 +1284,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2, y: 29.167515, z: -13}
-  m_LocalScale: {x: 0.22643, y: 2.6104, z: 32.244694}
+  m_LocalScale: {x: 1.7219775, y: 2.6104, z: 32.244694}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2123647148}
@@ -2079,8 +2095,8 @@ Transform:
   m_GameObject: {fileID: 1811703803}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -14, y: 29.167515, z: 3}
-  m_LocalScale: {x: 0.22643, y: 2.6104, z: 32.244694}
+  m_LocalPosition: {x: -11, y: 29.167515, z: 3}
+  m_LocalScale: {x: 2.1532395, y: 2.6104, z: 32.244694}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2123647148}
