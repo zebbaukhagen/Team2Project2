@@ -31,6 +31,8 @@ public class UIMainMenuController : MonoBehaviour
     {
         instructionsPanel.SetActive(false);
         settingsMenu.SetActive(false);
+
+        
     }
 
     public void LoadScene(string sceneName)
