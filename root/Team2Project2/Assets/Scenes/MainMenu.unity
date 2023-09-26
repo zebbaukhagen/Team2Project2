@@ -204,7 +204,6 @@ GameObject:
   - component: {fileID: 117869946}
   - component: {fileID: 117869945}
   - component: {fileID: 117869949}
-  - component: {fileID: 117869950}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -224,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
+  m_IgnoreReversedGraphics: 0
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
@@ -309,23 +308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructionsPanel: {fileID: 179392414}
   settingsMenu: {fileID: 1964145896}
---- !u!114 &117869950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117869944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eee093d0595b2e429aa694b9aab955b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  settingsMenu: {fileID: 0}
-  levelPrompt: {fileID: 0}
-  uiController: {fileID: 0}
 --- !u!1 &179392414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,11 +2022,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 593187278868146636, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.8999634
+      value: 4.8999023
       objectReference: {fileID: 0}
     - target: {fileID: 593187278868146636, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000015258789
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2869767169027917812, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2096,7 +2078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5222900605595779180, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.1145096
+      value: -1.1145172
       objectReference: {fileID: 0}
     - target: {fileID: 6258389645318872560, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
       propertyPath: m_Pivot.x
