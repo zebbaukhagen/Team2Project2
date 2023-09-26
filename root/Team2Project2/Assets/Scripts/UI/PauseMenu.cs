@@ -66,6 +66,7 @@ public class PauseMenu : MonoBehaviour
         }
         else
         {
+            togglePauseGame = false;
             pauseMenu.SetActive(false);
             playerController.enabled = true;
             Time.timeScale = 1f;
@@ -84,11 +85,12 @@ public class PauseMenu : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        togglePauseGame = false;
         uiController.LoadScene("MainMenu");
         pauseMenu.SetActive(false);
         playerController.enabled = false;
         Cursor.lockState = CursorLockMode.None;
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
     }
 
 }
