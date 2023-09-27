@@ -31,6 +31,8 @@ public class UIMainMenuController : MonoBehaviour
     {
         instructionsPanel.SetActive(false);
         settingsMenu.SetActive(false);
+
+        
     }
 
     public void LoadScene(string sceneName)
@@ -38,15 +40,10 @@ public class UIMainMenuController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void OffloadScene(string sceneName)
-    {
-        SceneManager.UnloadSceneAsync(sceneName);
-    }
-
     public void StartGame()
     {
         LoadScene("LevelOne");
-        OffloadScene("MainMenu");
+        
     }
 
     public void OpenInstructions()
