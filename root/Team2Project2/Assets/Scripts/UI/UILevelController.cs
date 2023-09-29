@@ -45,7 +45,7 @@ public class UILevelController : MonoBehaviour
     
     private void OpenPauseMenu()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenu.PauseGame();
         }
