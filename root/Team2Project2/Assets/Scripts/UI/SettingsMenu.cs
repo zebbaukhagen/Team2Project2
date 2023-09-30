@@ -8,16 +8,20 @@ using TMPro;
 public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
-   
+    public int screenWidth = 1920; 
+    public int screenHeight = 1080; 
+    public bool fullscreen = true;
+
 
     //[SerializeField] private TMP_Dropdown resolutionDropdown;
 
-    Resolution[] resolutions;
+    //Resolution[] resolutions;
 
 
 
     void Start()
     {
+        Screen.SetResolution(screenWidth, screenHeight, fullscreen);
         //resolutions = Screen.resolutions;
 
         //resolutionDropdown.ClearOptions();
