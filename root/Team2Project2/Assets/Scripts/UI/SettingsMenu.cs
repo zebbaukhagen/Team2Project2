@@ -10,7 +10,7 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
    
 
-    [SerializeField] private TMP_Dropdown resolutionDropdown;
+    //[SerializeField] private TMP_Dropdown resolutionDropdown;
 
     Resolution[] resolutions;
 
@@ -18,27 +18,27 @@ public class SettingsMenu : MonoBehaviour
 
     void Start()
     {
-        resolutions = Screen.resolutions;
+        //resolutions = Screen.resolutions;
 
-        resolutionDropdown.ClearOptions();
+        //resolutionDropdown.ClearOptions();
 
-        List<string> options = new List<string>();
+        //List<string> options = new List<string>();
 
-        int currentResolutionIndex = 0;
-        for(int i = 0; i <resolutions.Length; i++)
-        {
-            string option = resolutions[i].width + "x" + resolutions[i].height;
-            options.Add(option);
+        //int currentResolutionIndex = 0;
+        //for(int i = 0; i <resolutions.Length; i++)
+        //{
+        //    string option = resolutions[i].width + "x" + resolutions[i].height;
+        //    options.Add(option);
 
-            if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
-            {
-                currentResolutionIndex = i;
-            }
-        }
+        //    if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+        //    {
+        //        currentResolutionIndex = i;
+        //    }
+        //}
 
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        //resolutionDropdown.AddOptions(options);
+        //resolutionDropdown.value = currentResolutionIndex;
+        //resolutionDropdown.RefreshShownValue();
     }
 
     public void SetVolume(float volume)
@@ -57,9 +57,9 @@ public class SettingsMenu : MonoBehaviour
         Screen.fullScreen = isFullScreen;
     }
 
-    public void SetResolution(int resolutionIndex)
-    {
-        Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
+    //public void SetResolution(int resolutionIndex)
+    //{
+    //    Resolution resolution = resolutions[resolutionIndex];
+    //    Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    //}
 }
