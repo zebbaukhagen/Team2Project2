@@ -47,9 +47,11 @@ public class TileTile : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player entered tile " + gameObject.name);
-            //_rat.transform.parent = gameObject.transform;
+            // check for any empty neighbors, and return one if it exists
             if (_parentSlot.CheckForEmptyNeighbor(out TileSlot possibleEmptyParent))
             {
+                // unparent the object from the slot, get the transform of the new one,
+                // assign a new parent and update slot dependencies, start coroutine to move to new position
                 _parentSlot.ReleaseOldChild();
                 Vector3 newPosition = possibleEmptyParent.transform.position;
                 _parentSlot = possibleEmptyParent;
@@ -57,19 +59,6 @@ public class TileTile : MonoBehaviour
                 StartCoroutine(LerpPosition(newPosition, 1));
             }
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (_rat.transform.parent == gameObject.transform)
-        {
-            _rat.transform.parent = null;
-        }
-    }
-
-    private void MoveToNewPosition(Vector3 pos1, Vector3 pos2)
-    {
-
     }
 
     IEnumerator LerpPosition(Vector3 targetPosition, float duration)
