@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private UILevelController uiController;
     [SerializeField] private static bool togglePauseGame;
     [SerializeField] private static bool pauseGame;
-    [SerializeField] private AudioManager audio;
+    [SerializeField] private AudioManager audioManager;
     
     
     // Start is called before the first frame update
@@ -38,7 +38,7 @@ public class PauseMenu : MonoBehaviour
 
         if (togglePauseGame == true)
         {
-            //audio.PauseAudio();
+            //audioManager.PauseAudio();
             pauseMenu.SetActive(true);
             playerController.enabled = false;
             Time.timeScale = 0f;
@@ -58,7 +58,7 @@ public class PauseMenu : MonoBehaviour
         }
         else
         {
-            //audio.PlayMusic();
+            //audioManager.PlayMusic();
             togglePauseGame = false;
             pauseMenu.SetActive(false);
             playerController.enabled = true;

@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        // Play the music or any audio you want
+        // Play the music or any audioManager you want
         PlayMusic();
     }
 
@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
     //{
     //    if (audioSource.isPlaying)
     //    {
-    //        audioSource.Pause(); // Pause the audio if it's playing
+    //        audioSource.Pause(); // Pause the audioManager if it's playing
     //    }
     //}
 }
