@@ -6,9 +6,6 @@ public class TileTile : MonoBehaviour
 {
     [SerializeField] private TileSlot _parentSlot;
     [SerializeField] private GameObject _rat;
-    [SerializeField] private SocketDirection[] socketDirections;
-
-    private bool powered = false;
 
     // Start is called before the first frame update
     void Start()
@@ -77,5 +74,3 @@ public class TileTile : MonoBehaviour
         transform.position = targetPosition;
     }
 }
-
-public enum SocketDirection { TOP, BOTTOM, LEFT, RIGHT };

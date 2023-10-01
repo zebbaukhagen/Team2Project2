@@ -60,5 +60,17 @@ public class TileSlot : MonoBehaviour
         return false;
     }
 
-
+    public List<TileConduit> ReturnListOfNeighboringConduits()
+    {
+        // look through list of neighboring slots, and return a list of the tileConduits in their children
+        List<TileConduit> result = new();
+        foreach (TileSlot neighbor in _listOfNeighborSlots)
+        {
+            if (neighbor.gameObject.TryGetComponent(out TileConduit tileConduit))
+            {
+                result.Add(tileConduit);
+            }
+        }
+        return result;
+    }
 }
