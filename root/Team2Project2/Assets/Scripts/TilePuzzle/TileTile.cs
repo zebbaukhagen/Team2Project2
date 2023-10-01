@@ -5,6 +5,7 @@ using UnityEngine;
 public class TileTile : MonoBehaviour
 {
     [SerializeField] private TileSlot _parentSlot;
+    [SerializeField] private GameObject _rat;
 
     // Start is called before the first frame update
     void Start()
@@ -12,6 +13,10 @@ public class TileTile : MonoBehaviour
         if (_parentSlot == null)
         {
             TryToAssignParent();
+        }
+        if (_rat == null)
+        {
+            _rat = GameObject.Find("Rat");
         }
     }
 
@@ -29,10 +34,54 @@ public class TileTile : MonoBehaviour
         if (possibleParent != null)
         {
             _parentSlot = possibleParent;
+            _parentSlot.AcceptNewChild(this);
         }
         else
         {
             Debug.Log("Tile: " + gameObject.name + "failed to assign parent slot.");
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player entered tile " + gameObject.name);
+            //_rat.transform.parent = gameObject.transform;
+            if (_parentSlot.CheckForEmptyNeighbor(out TileSlot possibleEmptyParent))
+            {
+                _parentSlot.ReleaseOldChild();
+                Vector3 newPosition = possibleEmptyParent.transform.position;
+                _parentSlot = possibleEmptyParent;
+                _parentSlot.AcceptNewChild(this);
+                StartCoroutine(LerpPosition(newPosition, 1));
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (_rat.transform.parent == gameObject.transform)
+        {
+            _rat.transform.parent = null;
+        }
+    }
+
+    private void MoveToNewPosition(Vector3 pos1, Vector3 pos2)
+    {
+
+    }
+
+    IEnumerator LerpPosition(Vector3 targetPosition, float duration)
+    {
+        float time = 0;
+        Vector3 startPosition = transform.position;
+        while (time < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = targetPosition;
     }
 }
