@@ -5,8 +5,13 @@ using UnityEngine;
 public class TileConduit : MonoBehaviour
 {
     [SerializeField] private TileSlot _parentSlot;
-    [SerializeField] private SocketDirection[] _socketDirections;
-    [SerializeField] private bool _powerState = false;
+    [SerializeField] public SocketDirection[] _socketDirections { get; private set; }
+    [SerializeField] private List<GameObject> listOfConduits = new();
+    public bool PowerState { get; private set; } = false;
+
+    [SerializeField] private Material onMaterial;
+    [SerializeField] private Material offMaterial;
+
 
     private void Start()
     {
@@ -28,6 +33,29 @@ public class TileConduit : MonoBehaviour
         else
         {
             Debug.Log("Tile: " + gameObject.name + "failed to assign parent slot.");
+        }
+    }
+
+    public void SetPowerState(bool state)
+    {
+        PowerState = state;
+        ChangeMaterial();
+    }
+
+    private void ChangeMaterial()
+    {
+        // set the material of the conduits to on or off colors
+        foreach (GameObject conduit in listOfConduits)
+        {
+            Renderer rend = conduit.GetComponent<Renderer>();
+            if (PowerState)
+            {
+                rend.material = onMaterial;
+            }
+            else
+            {
+                rend.material = offMaterial;
+            }
         }
     }
 }
