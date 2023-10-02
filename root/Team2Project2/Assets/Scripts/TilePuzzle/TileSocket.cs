@@ -14,29 +14,19 @@ public class TileSocket : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Conduit") && other.GetComponentInParent<TileConduit>().PowerState == true)
+        if (other.CompareTag("Conduit"))
         {
-            Debug.Log("Power connected.");
-            tileConduit.SetPowerState(true);
-        }
-        if (other.CompareTag("PowerSource"))
-        {
-            Debug.Log("Power connected.");
-            tileConduit.SetPowerState(true);
+            Debug.Log("Conduit connected.");
+            tileConduit.ConnectConduit(other.GetComponentInParent<TileConduit>());
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Conduit") && other.gameObject.GetComponentInParent<TileConduit>().PowerState == false)
+        if (other.CompareTag("Conduit"))
         {
             Debug.Log("Power disconnected.");
-            tileConduit.SetPowerState(false);
-        }
-        if (other.CompareTag("PowerSource"))
-        {
-            Debug.Log("Power connected.");
-            tileConduit.SetPowerState(false);
+            tileConduit.DisconnectConduit();
         }
     }
 }

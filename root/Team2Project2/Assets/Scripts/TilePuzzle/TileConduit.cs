@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class TileConduit : MonoBehaviour
 {
     [SerializeField] private TileSlot _parentSlot;
-    [SerializeField] public SocketDirection[] _socketDirections { get; private set; }
     [SerializeField] private List<GameObject> listOfConduits = new();
-    public bool PowerState { get; private set; } = false;
 
     [SerializeField] private Material onMaterial;
     [SerializeField] private Material offMaterial;
+
+    [SerializeField] private TileConduit connectedConduit;
+
+    private bool messageProcessed = false;
 
 
     private void Start()
@@ -36,19 +39,59 @@ public class TileConduit : MonoBehaviour
         }
     }
 
-    public void SetPowerState(bool state)
+    public void ConnectConduit(TileConduit newConduit)
     {
-        PowerState = state;
-        ChangeMaterial();
+        connectedConduit = newConduit;
     }
 
-    private void ChangeMaterial()
+    public void DisconnectConduit()
+    {
+        SendMessage(false);
+        connectedConduit = null;
+    }
+
+    public void ReceiveMessage(bool powered)
+    {
+        if (messageProcessed) // Exit condition
+        {
+            return;
+        }
+
+        messageProcessed = true; // Mark this instance as processed
+
+        if (powered == true)
+        {
+            ChangeMaterial(true);
+            SendMessage(powered);
+        }
+        else if (powered == false)
+        {
+            ChangeMaterial(false);
+            SendMessage(powered);
+        }
+
+        messageProcessed = false; // Reset for future messages
+    }
+
+    private void SendMessage(bool powered)
+    {
+        if (connectedConduit != null)
+        {
+            connectedConduit.ReceiveMessage(powered);
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    private void ChangeMaterial(bool powerState)
     {
         // set the material of the conduits to on or off colors
         foreach (GameObject conduit in listOfConduits)
         {
             Renderer rend = conduit.GetComponent<Renderer>();
-            if (PowerState)
+            if (powerState)
             {
                 rend.material = onMaterial;
             }
