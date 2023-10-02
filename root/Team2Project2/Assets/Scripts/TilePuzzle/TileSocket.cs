@@ -19,6 +19,11 @@ public class TileSocket : MonoBehaviour
             Debug.Log("Conduit connected.");
             tileConduit.ConnectConduit(other.GetComponentInParent<TileConduit>());
         }
+        if (other.CompareTag("PowerReceiver"))
+        {
+            Debug.Log("PowerReceiver connected.");
+            tileConduit.ConnectReceiver(other.GetComponent<PowerReceiver>());
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -27,6 +32,11 @@ public class TileSocket : MonoBehaviour
         {
             Debug.Log("Power disconnected.");
             tileConduit.DisconnectConduit();
+        }
+        if (other.CompareTag("PowerReceiver"))
+        {
+            Debug.Log("PowerReceiver disconnected.");
+            tileConduit.DisconnectReceiver();
         }
     }
 }

@@ -26,7 +26,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 0, z: 6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 0.25, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3101744906429175795}
@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 9023295051809621585}
   - component: {fileID: 1948938021957501591}
   - component: {fileID: 1492084246986881043}
+  - component: {fileID: 8826313100650155313}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -62,7 +63,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.25, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7542457367348549336}
@@ -95,7 +96,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 91e39add4e96b014eaaa8fae0902730f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,3 +153,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _parentSlot: {fileID: 0}
   _rat: {fileID: 0}
+  prefabParent: {fileID: 3477774130923181711}
+--- !u!114 &8826313100650155313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931418894272350472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53a5af6126c0404d8fef02819f16d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentSlot: {fileID: 0}
+  listOfConduits: []
+  onMaterial: {fileID: 2100000, guid: aab6625b172601e479f07a876ec9ecb3, type: 2}
+  offMaterial: {fileID: 2100000, guid: 9209d6036d144d445924248d6df3ea72, type: 2}
+  connectedConduit: {fileID: 0}

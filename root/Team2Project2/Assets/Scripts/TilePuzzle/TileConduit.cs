@@ -12,6 +12,7 @@ public class TileConduit : MonoBehaviour
     [SerializeField] private Material offMaterial;
 
     [SerializeField] private TileConduit connectedConduit;
+    [SerializeField] private PowerReceiver powerReceiver;
 
     private bool messageProcessed = false;
 
@@ -21,6 +22,18 @@ public class TileConduit : MonoBehaviour
         if (_parentSlot == null)
         {
             TryToAssignParent();
+        }
+        GetAllConduitChildren();
+    }
+
+    private void GetAllConduitChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.CompareTag("Conduit"))
+            {
+                listOfConduits.Add(child.gameObject);
+            }
         }
     }
 
@@ -42,6 +55,16 @@ public class TileConduit : MonoBehaviour
     public void ConnectConduit(TileConduit newConduit)
     {
         connectedConduit = newConduit;
+    }
+
+    public void ConnectReceiver(PowerReceiver newReceiver)
+    {
+        powerReceiver = newReceiver;
+    }
+
+    public void DisconnectReceiver()
+    {
+        powerReceiver = null;
     }
 
     public void DisconnectConduit()
@@ -78,6 +101,10 @@ public class TileConduit : MonoBehaviour
         if (connectedConduit != null)
         {
             connectedConduit.ReceiveMessage(powered);
+        }
+        else if (powerReceiver != null)
+        {
+            powerReceiver.ReceiveMessage(powered);
         }
         else
         {

@@ -9,7 +9,7 @@ TagManager:
   - KillBox
   - Conduit
   - Socket
-  - PowerSource
+  - PowerReceiver
   layers:
   - Default
   - TransparentFX

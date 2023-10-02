@@ -6,6 +6,7 @@ public class TileTile : MonoBehaviour
 {
     [SerializeField] private TileSlot _parentSlot;
     [SerializeField] private GameObject _rat;
+    [SerializeField] private GameObject prefabParent;
 
     // Start is called before the first frame update
     void Start()
@@ -46,10 +47,10 @@ public class TileTile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player entered tile " + gameObject.name);
             // check for any empty neighbors, and return one if it exists
             if (_parentSlot.CheckForEmptyNeighbor(out TileSlot possibleEmptyParent))
             {
+                Debug.Log("Player entered tile " + gameObject.name);
                 // unparent the object from the slot, get the transform of the new one,
                 // assign a new parent and update slot dependencies, start coroutine to move to new position
                 _parentSlot.ReleaseOldChild();
@@ -58,19 +59,23 @@ public class TileTile : MonoBehaviour
                 _parentSlot.AcceptNewChild(this);
                 StartCoroutine(LerpPosition(newPosition, 1));
             }
+            else
+            {
+                return;
+            }
         }
     }
 
     IEnumerator LerpPosition(Vector3 targetPosition, float duration)
     {
         float time = 0;
-        Vector3 startPosition = transform.position;
+        Vector3 startPosition = prefabParent.transform.position;
         while (time < duration)
         {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
+            prefabParent.transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
             time += Time.deltaTime;
             yield return null;
         }
-        transform.position = targetPosition;
+        prefabParent.transform.position = targetPosition;
     }
 }
