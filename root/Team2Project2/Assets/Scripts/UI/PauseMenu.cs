@@ -79,7 +79,7 @@ public class PauseMenu : MonoBehaviour
     public void BackToMainMenu()
     {
         togglePauseGame = false;
-        uiController.LoadScene("MainMenu");
+        uiController.BackToMainMenu();
         pauseMenu.SetActive(false);
         playerController.enabled = false;
         Cursor.lockState = CursorLockMode.None;
