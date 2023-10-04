@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &128281640 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8830255404888084653, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
+  m_PrefabInstance: {fileID: 1603196505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &253029493
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +234,7 @@ GameObject:
   - component: {fileID: 1301965972}
   - component: {fileID: 1301965971}
   - component: {fileID: 1301965970}
+  - component: {fileID: 1301965974}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -319,6 +325,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1301965974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301965969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ba680a08358c14a8678153ccc1b6e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsMenu: {fileID: 128281640}
+  pauseMenuPanel: {fileID: 1303899388}
+  pauseMenu: {fileID: 1603196507}
+--- !u!1 &1303899388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5738631707862412898, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
+  m_PrefabInstance: {fileID: 1603196505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1349494540
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,15 +447,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2717201371781756703, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2717201371781756703, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2717201371781756703, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2915539477663959874, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMax.x
@@ -470,7 +496,7 @@ PrefabInstance:
     - target: {fileID: 3060903606580837409, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: uiController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1301965974}
     - target: {fileID: 3060903606580837409, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: playerController
       value: 
@@ -599,17 +625,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause_Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 5738631707862412898, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6105828243989556507, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -165
       objectReference: {fileID: 0}
     - target: {fileID: 6548875706760492618, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6548875706760492618, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8429848698189970765, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMax.x
@@ -678,6 +708,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4962022979580484995, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
   m_PrefabInstance: {fileID: 1603196505}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1603196507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3060903606580837409, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
+  m_PrefabInstance: {fileID: 1603196505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303899388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eee093d0595b2e429aa694b9aab955b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1753715499
 GameObject:
   m_ObjectHideFlags: 0
