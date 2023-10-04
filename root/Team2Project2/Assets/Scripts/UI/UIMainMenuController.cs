@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -9,6 +10,10 @@ public class UIMainMenuController : MonoBehaviour
     [SerializeField] private GameObject instructionsPanel;
     [SerializeField] private GameObject settingsMenu;
     private static UIMainMenuController instance;
+    [SerializeField] private Button button;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip hoverSound;
+    [SerializeField] private AudioClip clickSound;
 
     public static UIMainMenuController Instance
     {
@@ -31,8 +36,11 @@ public class UIMainMenuController : MonoBehaviour
     {
         instructionsPanel.SetActive(false);
         settingsMenu.SetActive(false);
-
-        
+        button = GetComponent<Button>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = hoverSound;
+        audioSource.clip = clickSound;
+        button.onClick.AddListener(PlayClickSound);
     }
 
     public void GoToLevelOne()
@@ -57,8 +65,6 @@ public class UIMainMenuController : MonoBehaviour
 
     }
 
-
-
     public void OpenInstructions()
     {
         instructionsPanel.SetActive(!instructionsPanel.activeSelf);
@@ -73,5 +79,23 @@ public class UIMainMenuController : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Game has been quit");
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (audioSource && hoverSound)
+            audioSource.Play();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (audioSource && hoverSound)
+            audioSource.Stop();
+    }
+    
+    void PlayClickSound()
+    {
+        if (audioSource && clickSound)
+            audioSource.PlayOneShot(clickSound);
     }
 }
