@@ -42,13 +42,18 @@ public class UILevelController : MonoBehaviour
     {
         settingsMenu.SetActive(!settingsMenu.activeSelf);
     }
-    
+
     private void OpenPauseMenu()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenu.PauseGame();
         }
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
@@ -57,19 +62,22 @@ public class UILevelController : MonoBehaviour
         Debug.Log("Game has been quit");
     }
 
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
-
-    public void OffloadScene(string sceneName)
-    {
-        SceneManager.UnloadSceneAsync(sceneName);
-    }
-
     public void NextLevel()
     {
-        LoadScene("LevelTwo");
-        OffloadScene("LevelOne");
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+
     }
+
 }
+

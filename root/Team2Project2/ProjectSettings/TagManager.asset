@@ -10,6 +10,7 @@ TagManager:
   - Conduit
   - Socket
   - PowerReceiver
+  - ExitLevelOne
   layers:
   - Default
   - TransparentFX

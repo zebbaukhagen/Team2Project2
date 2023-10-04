@@ -35,16 +35,29 @@ public class UIMainMenuController : MonoBehaviour
         
     }
 
-    public void LoadScene(string sceneName)
+    public void GoToLevelOne()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(2);
     }
 
-    public void StartGame()
+    public void NextLevel()
     {
-        LoadScene("LevelOne");
-        
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+
     }
+
+
 
     public void OpenInstructions()
     {

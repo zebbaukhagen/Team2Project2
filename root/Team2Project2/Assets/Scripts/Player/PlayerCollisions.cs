@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerCollisions : MonoBehaviour
 {
+    [SerializeField] private UILevelController uiLevelController;
+
     [SerializeField] Transform respawnPoint;
     private void Awake()
     {
@@ -16,6 +18,10 @@ public class PlayerCollisions : MonoBehaviour
         {
             Debug.Log("Player ate shit");
             Respawn();
+        }
+        else if(other.CompareTag("ExitLevelOne"))
+        {
+            uiLevelController.NextLevel();
         }
     }
 
