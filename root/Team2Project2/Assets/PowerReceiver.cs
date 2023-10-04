@@ -5,6 +5,7 @@ using UnityEngine;
 public class PowerReceiver : MonoBehaviour
 {
     [SerializeField] private bool puzzleSolved = false;
+    [SerializeField] private Door finishDoor;
     private bool messageProcessed = false;
 
     public bool PuzzleSolved
@@ -24,11 +25,7 @@ public class PowerReceiver : MonoBehaviour
 
         if (powered == true)
         {
-            SolvePuzzle();
-        }
-        else if (powered == false)
-        {
-            return;
+                SolvePuzzle();
         }
 
         messageProcessed = false; // Reset for future messages
@@ -39,5 +36,16 @@ public class PowerReceiver : MonoBehaviour
         // Do anything necessary when puzzle is solved like open doors
         Debug.Log(transform.root.name + " solved!");
         puzzleSolved = true;
+        OpenFinishDoor();
+    }
+
+    private void OpenFinishDoor()
+    {
+        if (finishDoor == null) { Debug.Log("No door attached."); }
+        else
+        {
+            // open the final door
+            finishDoor.SetDoorStatus(DoorStatus.OPEN);
+        }
     }
 }

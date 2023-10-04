@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class PowerSource : MonoBehaviour
 {
     [SerializeField] TileConduit connectedConduit;
+    [SerializeField] PowerReceiver pairedReceiver;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Conduit"))
@@ -30,7 +32,7 @@ public class PowerSource : MonoBehaviour
 
     private IEnumerator TransmitMessage()
     {
-        while (true)
+        while (pairedReceiver.PuzzleSolved == false)
         {
             if (connectedConduit != null)
             {
@@ -38,6 +40,7 @@ public class PowerSource : MonoBehaviour
             }
             yield return new WaitForSeconds(.1f);
         }
+        yield return null;
 
     }
 
