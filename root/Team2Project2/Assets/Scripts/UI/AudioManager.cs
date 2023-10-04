@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource2;
+    [SerializeField] private UILevelController uiController;
 
     private void Awake()
     {
@@ -23,8 +26,8 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        // Play the music or any audioManager you want
         PlayMusic();
+        audioSource2.Stop();
     }
 
     public void PlayMusic()
@@ -42,6 +45,17 @@ public class AudioManager : MonoBehaviour
             audioSource.Stop();
         }
     }
+
+    //void MainGameMusic()
+    //{
+    //    if(uiController.NextLevel)
+    //    {
+    //        audioSource.Stop();
+    //        audioSource2.Play();
+    //    }
+    //}
+
+  
 
     //public void PauseAudio()
     //{
