@@ -6,8 +6,6 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioSource audioSource2;
-    [SerializeField] private UILevelController uiController;
 
     private void Awake()
     {
@@ -27,7 +25,6 @@ public class AudioManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         PlayMusic();
-        audioSource2.Stop();
     }
 
     public void PlayMusic()
@@ -45,15 +42,6 @@ public class AudioManager : MonoBehaviour
             audioSource.Stop();
         }
     }
-
-    //void MainGameMusic()
-    //{
-    //    if(uiController.NextLevel)
-    //    {
-    //        audioSource.Stop();
-    //        audioSource2.Play();
-    //    }
-    //}
 
   
 

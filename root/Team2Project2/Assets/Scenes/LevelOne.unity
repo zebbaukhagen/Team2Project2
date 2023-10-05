@@ -3611,7 +3611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7899186855544950640, guid: c6a058e28ac9b23489f5d742bcca482b, type: 3}
       propertyPath: doorStatus
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4407,7 +4407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7899186855544950640, guid: c6a058e28ac9b23489f5d742bcca482b, type: 3}
       propertyPath: doorStatus
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
