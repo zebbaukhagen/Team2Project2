@@ -6,9 +6,9 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     [SerializeField] private AudioClip[] audioClips;// holds the background music
-    [SerializeField] private AudioSource[] audioSource;
-     private int currentAudioIndex = 0;
-    private bool isGameStarted = false;
+    [SerializeField] private AudioSource backGroundMusic;
+    [SerializeField] private AudioSource clickSound;
+    private int currentAudioIndex = 0;
 
     private void Awake()
     {
@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            audioSource = GetComponent<AudioSource[]>();
+            backGroundMusic = GetComponent<AudioSource>();
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -32,18 +32,15 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        if (isGameStarted)
-            PlayNextAudioClip();
-        else
-            isGameStarted = true;
+ 
     }
 
     public void PlayNextAudioClip()
     {
-        if (currentAudioIndex < audioClips.Length && audioSource.Length > 0)
+        if (currentAudioIndex < 1)
         {
-            audioSource[0].clip = audioClips[currentAudioIndex];
-            audioSource[0].Play();
+            backGroundMusic.clip = audioClips[currentAudioIndex];
+            backGroundMusic.Play();
             currentAudioIndex++;
         }
     }
@@ -51,10 +48,8 @@ public class AudioManager : MonoBehaviour
 
     public void ClickSound()
     {
-        if (isGameStarted)
-        {
-            audioSource[1].clip = audioClips[currentAudioIndex];
-            audioSource[1].Play();
-        }
+       clickSound.clip = audioClips[2];
+       clickSound.Play();
+        
     }
 }
