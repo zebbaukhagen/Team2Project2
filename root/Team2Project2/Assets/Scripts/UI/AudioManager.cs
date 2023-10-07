@@ -47,5 +47,8 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    pu
+    public void ClickSound()
+    {
+
+    }
 }
