@@ -161,7 +161,7 @@ QualitySettings:
     - Server
   - serializedVersion: 3
     name: High
-    pixelLightCount: 2
+    pixelLightCount: 16
     shadows: 2
     shadowResolution: 1
     shadowProjection: 1
