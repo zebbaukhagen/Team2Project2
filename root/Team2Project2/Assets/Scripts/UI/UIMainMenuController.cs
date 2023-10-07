@@ -10,13 +10,10 @@ public class UIMainMenuController : MonoBehaviour
     [SerializeField] private GameObject instructionsPanel;
     [SerializeField] private GameObject settingsMenu;
     private static UIMainMenuController instance;
-    [SerializeField] private Button button1;
-    [SerializeField] private Button button2;
-    [SerializeField] private Button button3;
-    [SerializeField] private Button button4;
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip hoverSound;
-    [SerializeField] private AudioClip clickSound;
+ 
+  
+    [SerializeField] private AudioManager aManager;
+ 
 
     public static UIMainMenuController Instance
     {
@@ -39,22 +36,13 @@ public class UIMainMenuController : MonoBehaviour
     {
         instructionsPanel.SetActive(false);
         settingsMenu.SetActive(false);
-        button1 = GetComponent<Button>();
-        button2 = GetComponent<Button>();
-        button3 = GetComponent<Button>();
-        button4 = GetComponent<Button>();
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = hoverSound;
-        audioSource.clip = clickSound;
-        button1.onClick.AddListener(PlayClickSound);
-        button2.onClick.AddListener(PlayClickSound);
-        button3.onClick.AddListener(PlayClickSound);
-        button4.onClick.AddListener(PlayClickSound);
+     
     }
 
     public void GoToLevelOne()
     {
         SceneManager.LoadScene(2);
+        aManager.PlayNextAudioSource();
     }
 
     public void NextLevel()
@@ -66,6 +54,7 @@ public class UIMainMenuController : MonoBehaviour
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(nextSceneIndex);
+            aManager.PlayNextAudioSource();
         }
         else
         {
@@ -88,25 +77,5 @@ public class UIMainMenuController : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Game has been quit");
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (audioSource && hoverSound)
-            Debug.Log("ping");
-            audioSource.Play();
-    }
-
-     public void OnPointerExit(PointerEventData eventData)
-    {
-        if (audioSource && hoverSound)
-            Debug.Log("Pong");
-            audioSource.Stop();
-    }
-    
-    void PlayClickSound()
-    {
-        if (audioSource && clickSound)
-            audioSource.PlayOneShot(clickSound);
     }
 }

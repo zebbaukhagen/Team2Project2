@@ -5,7 +5,10 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource[] audioSources;// holds the background music
+    
+
+    private int currentAudioIndex = 0;
 
     private void Awake()
     {
@@ -23,33 +26,15 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        PlayMusic();
+        PlayNextAudioSource();
     }
 
-    public void PlayMusic()
+    public void PlayNextAudioSource()
     {
-        if (audioSource != null && !audioSource.isPlaying)
+        if(currentAudioIndex < audioSources.Length) 
         {
-            audioSource.Play();
+            audioSources[currentAudioIndex].Play();
+            currentAudioIndex++;
         }
     }
-
-    public void StopMusic()
-    {
-        if (audioSource != null && audioSource.isPlaying)
-        {
-            audioSource.Stop();
-        }
-    }
-
-  
-
-    //public void PauseAudio()
-    //{
-    //    if (audioSource.isPlaying)
-    //    {
-    //        audioSource.Pause(); // Pause the audioManager if it's playing
-    //    }
-    //}
 }
