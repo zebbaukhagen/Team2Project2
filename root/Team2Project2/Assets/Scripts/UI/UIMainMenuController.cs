@@ -42,7 +42,7 @@ public class UIMainMenuController : MonoBehaviour
     public void GoToLevelOne()
     {
         SceneManager.LoadScene(2);
-        aManager.PlayNextAudioSource();
+        aManager.PlayNextAudioClip();
     }
 
     public void NextLevel()
@@ -54,7 +54,7 @@ public class UIMainMenuController : MonoBehaviour
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(nextSceneIndex);
-            aManager.PlayNextAudioSource();
+            aManager.PlayNextAudioClip ();
         }
         else
         {
