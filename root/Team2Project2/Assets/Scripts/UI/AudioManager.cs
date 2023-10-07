@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     [SerializeField] private AudioClip[] audioClips;// holds the background music
+    [SerializeField] private AudioClip audioClip;
     [SerializeField] private AudioSource audioSource;
 
     private int currentAudioIndex = 0;
@@ -45,4 +46,6 @@ public class AudioManager : MonoBehaviour
             currentAudioIndex++;
         }
     }
+
+    pu
 }
