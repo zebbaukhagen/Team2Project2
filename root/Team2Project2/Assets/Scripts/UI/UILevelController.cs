@@ -30,7 +30,7 @@ public class UILevelController : MonoBehaviour
     {
         settingsMenu.SetActive(false);
         pauseMenuPanel.SetActive(false);
-        QualitySettings.SetQualityLevel(3);
+        QualitySettings.SetQualityLevel(2);
     }
 
     // Update is called once per frame

@@ -34,7 +34,7 @@ public class UIMainMenuController : MonoBehaviour
 
     private void Start()
     {
-        QualitySettings.SetQualityLevel(3);
+        QualitySettings.SetQualityLevel(2);
         instructionsPanel.SetActive(false);
         settingsMenu.SetActive(false);
      
