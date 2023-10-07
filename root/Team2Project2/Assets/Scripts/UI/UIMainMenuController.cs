@@ -10,8 +10,6 @@ public class UIMainMenuController : MonoBehaviour
     [SerializeField] private GameObject instructionsPanel;
     [SerializeField] private GameObject settingsMenu;
     private static UIMainMenuController instance;
- 
-  
     [SerializeField] private AudioManager aManager;
  
 
@@ -71,6 +69,7 @@ public class UIMainMenuController : MonoBehaviour
 
     public void OpenSettings()
     {
+        aManager.ClickSound();
         settingsMenu.SetActive(!settingsMenu.activeSelf);
     }
 
