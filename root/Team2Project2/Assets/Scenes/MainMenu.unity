@@ -589,7 +589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructionsPanel: {fileID: 179392414}
   settingsMenu: {fileID: 1122917673}
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 1214862426}
   creditsMenu: {fileID: 1227737706}
   instructions: {fileID: 179392418}
 --- !u!82 &117869950
@@ -1761,6 +1761,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c07647ea616b3d4f9d2f7b9db197db3, type: 3}
+--- !u!114 &1214862426 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5446369044601114790, guid: 1c07647ea616b3d4f9d2f7b9db197db3, type: 3}
+  m_PrefabInstance: {fileID: 1214862425}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee82343dbe25984da22b73d26e86653, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1221362598
 GameObject:
   m_ObjectHideFlags: 0
