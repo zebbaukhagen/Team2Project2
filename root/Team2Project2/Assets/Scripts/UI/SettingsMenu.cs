@@ -7,6 +7,7 @@ using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
+    [SerializeField] private AudioManager aManager;
     [SerializeField] private AudioMixer audioMixer;
     public int screenWidth = 1920; 
     public int screenHeight = 1080; 
@@ -47,12 +48,13 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
+        aManager.ClickSound();
         audioMixer.SetFloat("Volume", volume);
-       
     }
 
     public void SetFullScreen(bool isFullScreen)
     {
+        aManager.ClickSound();
         Screen.fullScreen = isFullScreen;
     }
 
