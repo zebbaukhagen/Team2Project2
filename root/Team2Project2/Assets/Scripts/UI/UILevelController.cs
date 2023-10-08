@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class UILevelController : MonoBehaviour
 {
+    private static UILevelController instance;
+
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject pauseMenuPanel;
-    private static UILevelController instance;
     [SerializeField] private PauseMenu pauseMenu;
-    [SerializeField] private AudioManager audioManager;
 
     public static UILevelController Instance
     {
@@ -32,7 +32,6 @@ public class UILevelController : MonoBehaviour
         settingsMenu.SetActive(false);
         pauseMenuPanel.SetActive(false);
         QualitySettings.SetQualityLevel(3);
-        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -56,8 +55,7 @@ public class UILevelController : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        audioManager.PlayLevelMusic(0);
-        SceneManager.LoadScene(0);
+        GameManager.instance.LoadLevel(0);
     }
 
     public void QuitGame()
@@ -65,24 +63,5 @@ public class UILevelController : MonoBehaviour
         Application.Quit();
         Debug.Log("Game has been quit");
     }
-
-    public void NextLevel()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
-
-        
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            audioManager.PlayLevelMusic(nextSceneIndex);
-            SceneManager.LoadScene(nextSceneIndex);
-        }
-        else
-        {
-            audioManager.PlayLevelMusic(0);
-            SceneManager.LoadScene(0);
-        }
-    }
-
 }
 

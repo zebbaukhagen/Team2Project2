@@ -61,7 +61,8 @@ PrefabInstance:
       value: LUTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5461695266623289148, guid: 3a559cc907915164d9a5c2ea5383f28c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a559cc907915164d9a5c2ea5383f28c, type: 3}

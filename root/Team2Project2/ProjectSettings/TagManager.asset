@@ -10,10 +10,10 @@ TagManager:
   - Conduit
   - Socket
   - PowerReceiver
-  - ExitLevelOne
   - Roomba
   - Fuse
   - FuseBox
+  - LevelExit
   layers:
   - Default
   - TransparentFX

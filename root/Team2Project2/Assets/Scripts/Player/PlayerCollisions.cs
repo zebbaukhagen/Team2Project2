@@ -19,9 +19,9 @@ public class PlayerCollisions : MonoBehaviour
             Debug.Log("Player ate shit");
             Respawn();
         }
-        else if(other.CompareTag("ExitLevelOne"))
+        else if(other.CompareTag("LevelExit"))
         {
-            uiLevelController.NextLevel();
+            GameManager.instance.NextLevel();
         }
     }
 
