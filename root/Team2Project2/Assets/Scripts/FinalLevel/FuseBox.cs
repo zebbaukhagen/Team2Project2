@@ -1,44 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FuseBox : MonoBehaviour
 {
     [SerializeField] private Transform fuseLocation;
-    [SerializeField] private Fuse matchingFuse;
+    [SerializeField] private GameObject matchingFuse;
+    [SerializeField] private LightFlicker flickerScript;
+    [SerializeField] private Light fuseBoxLight;
+    [SerializeField] private GameObject connectedCeilingLight;
 
-    private bool fuseConnected = false;
-
-    public bool FuseConnected
-    {
-        get => fuseConnected;
-        private set => fuseConnected = value;
-    }
-
+    // Declare the puzzle solved event
+    public static event System.Action OnPuzzleSolved;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Fuse"))
+        Debug.Log("Something collided with fusebox");
+        if (other.transform.parent.CompareTag("Fuse"))
         {
-            CheckFuse(other.GetComponent<Fuse>());
+            Debug.Log("Fuse collided!");
+            CheckFuse(other.transform.parent.gameObject);
         }
     }
 
-    private void CheckFuse(Fuse fuse)
+    private void CheckFuse(GameObject fuse)
     {
-        //if ()
-
+        // Check to see if the fuse in the trigger is the fuse that this box is expecting
+        if (fuse == matchingFuse)
+        {
+            Debug.Log("Correct fuse!");
+            AcceptFuse(fuse);
+        }
     }
 
-    private void AcceptFuse()
+    private void AcceptFuse(GameObject fuse)
     {
         // Takes the matching fuse from the player, sets the parent and the transform
-
+        Rigidbody fuseRB = fuse.GetComponent<Rigidbody>();
+        fuseRB.isKinematic = true;
+        fuse.transform.position = fuseLocation.position;
+        flickerScript.CancelCoroutines();
+        fuseBoxLight.enabled = true;
+        TurnLightsOn();
     }
 
     private void TurnLightsOn()
     {
         // Activates the connected lights and checks the level for completion
-
+        connectedCeilingLight.SetActive(true);
+        OnPuzzleSolved?.Invoke();
     }
 }
