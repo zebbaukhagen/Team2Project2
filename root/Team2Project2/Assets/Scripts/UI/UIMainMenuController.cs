@@ -42,26 +42,7 @@ public class UIMainMenuController : MonoBehaviour
 
     public void GoToLevelOne()
     {
-        SceneManager.LoadScene(2);
-        audioManager.PlayLevelMusic(2);
-    }
-
-    public void NextLevel()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
-
-
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(nextSceneIndex);
-        }
-        else
-        {
-
-            SceneManager.LoadScene(0);
-        }
-
+        GameManager.instance.LoadLevel(1);
     }
 
     public void OpenInstructions()
