@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
             backGroundMusic = GetComponent<AudioSource>();
+            clickSound = GetComponent<AudioSource>();
             DontDestroyOnLoad(gameObject);
         }
         else

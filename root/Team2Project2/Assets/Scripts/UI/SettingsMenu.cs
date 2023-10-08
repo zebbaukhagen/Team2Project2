@@ -48,7 +48,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        aManager.ClickSound();
+        
         audioMixer.SetFloat("Volume", volume);
     }
 
