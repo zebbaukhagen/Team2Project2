@@ -4149,34 +4149,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 117869948}
     m_Modifications:
-    - target: {fileID: 2869767169027917812, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2869767169027917812, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2869767169027917812, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2895218464798847567, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 117869949}
-    - target: {fileID: 2895218464798847567, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSettings
-      objectReference: {fileID: 0}
-    - target: {fileID: 2895218464798847567, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UIMainMenuController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4266518991792505474, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6258389645318872560, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4208,10 +4184,6 @@ PrefabInstance:
     - target: {fileID: 6258389645318872560, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
       propertyPath: m_SizeDelta.y
       value: 1430.5901
-      objectReference: {fileID: 0}
-    - target: {fileID: 6258389645318872560, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0054054
       objectReference: {fileID: 0}
     - target: {fileID: 6258389645318872560, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4261,14 +4233,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6378295038830003873, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6378295038830003873, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8635873252792506090, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
       propertyPath: aManager
       value: 
@@ -4277,15 +4241,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingsMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 8713718473302106182, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 2253620379966977401, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
-    - {fileID: 134738602858045040, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
-    - {fileID: 3159764657466816932, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
