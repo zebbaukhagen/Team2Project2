@@ -12,6 +12,7 @@ TagManager:
   - PowerReceiver
   - ExitLevelOne
   - Roomba
+  - Fuse
   - FuseBox
   layers:
   - Default
