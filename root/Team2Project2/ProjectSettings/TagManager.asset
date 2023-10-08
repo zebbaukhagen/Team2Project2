@@ -11,6 +11,8 @@ TagManager:
   - Socket
   - PowerReceiver
   - ExitLevelOne
+  - Roomba
+  - FuseBox
   layers:
   - Default
   - TransparentFX
