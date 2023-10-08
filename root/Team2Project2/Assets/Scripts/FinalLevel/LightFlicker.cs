@@ -40,4 +40,9 @@ public class LightFlicker : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(flickerTime[0], flickerTime[1]));
         }
     }
+
+    public void CancelCoroutines()
+    {
+        StopCoroutine(FlickerLights());
+    }
 }

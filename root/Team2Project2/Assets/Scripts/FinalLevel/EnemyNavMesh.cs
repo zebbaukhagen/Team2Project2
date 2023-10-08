@@ -79,6 +79,6 @@ public class EnemyNavMesh : MonoBehaviour
             target = targets[destinationCounter];
         }
         agent.SetDestination(target.transform.position);
-        Debug.Log($"Switched target to: {target.name}");
+        // Debug.Log($"Switched target to: {target.name}");
     }
 }
