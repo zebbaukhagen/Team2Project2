@@ -9,11 +9,11 @@ public class UIMainMenuController : MonoBehaviour
 {
     [SerializeField] private GameObject instructionsPanel;
     [SerializeField] private GameObject settingsMenu;
-    private static UIMainMenuController instance;
-    [SerializeField] private AudioManager aManager;
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private GameObject creditsMenu;
     [SerializeField] private InstructionsPanel instructions;
 
+    private static UIMainMenuController instance;
 
     public static UIMainMenuController Instance
     {
@@ -37,14 +37,13 @@ public class UIMainMenuController : MonoBehaviour
         QualitySettings.SetQualityLevel(3);
         instructionsPanel.SetActive(false);
         settingsMenu.SetActive(false);
-     
+        audioManager = AudioManager.instance;
     }
 
     public void GoToLevelOne()
     {
-        // aManager.ClickSound();
         SceneManager.LoadScene(2);
-        // aManager.PlayNextAudioClip();
+        audioManager.PlayLevelMusic(2);
     }
 
     public void NextLevel()
@@ -56,10 +55,10 @@ public class UIMainMenuController : MonoBehaviour
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(nextSceneIndex);
-            // aManager.PlayNextAudioClip ();
         }
         else
         {
+
             SceneManager.LoadScene(0);
         }
 
@@ -67,26 +66,23 @@ public class UIMainMenuController : MonoBehaviour
 
     public void OpenInstructions()
     {
-        // aManager.ClickSound();
         instructionsPanel.SetActive(!instructionsPanel.activeSelf);
         instructions.LevelOneSelected();
     }
 
     public void OpenSettings()
     {
-        // aManager.ClickSound();
         settingsMenu.SetActive(!settingsMenu.activeSelf);
     }
 
     public void OpenCredits()
     {
-        // aManager.ClickSound();
         creditsMenu.SetActive(!creditsMenu.activeSelf);
     }
 
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Game has been quit");
+        Debug.Log("Game has been quit.");
     }
 }

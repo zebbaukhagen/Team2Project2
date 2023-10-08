@@ -7,7 +7,7 @@ public class UILevelController : MonoBehaviour
     [SerializeField] private GameObject pauseMenuPanel;
     private static UILevelController instance;
     [SerializeField] private PauseMenu pauseMenu;
-    [SerializeField] private AudioManager aManager;
+    [SerializeField] private AudioManager audioManager;
 
     public static UILevelController Instance
     {
@@ -32,6 +32,7 @@ public class UILevelController : MonoBehaviour
         settingsMenu.SetActive(false);
         pauseMenuPanel.SetActive(false);
         QualitySettings.SetQualityLevel(3);
+        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -42,7 +43,6 @@ public class UILevelController : MonoBehaviour
 
     public void OpenSettings()
     {
-        aManager.ClickSound();
         settingsMenu.SetActive(!settingsMenu.activeSelf);
     }
 
@@ -50,20 +50,18 @@ public class UILevelController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            aManager.ClickSound();
             pauseMenu.PauseGame();
         }
     }
 
     public void BackToMainMenu()
     {
-        aManager.ClickSound();
+        audioManager.PlayLevelMusic(0);
         SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
     {
-        aManager.ClickSound();
         Application.Quit();
         Debug.Log("Game has been quit");
     }
@@ -76,13 +74,14 @@ public class UILevelController : MonoBehaviour
         
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
+            audioManager.PlayLevelMusic(nextSceneIndex);
             SceneManager.LoadScene(nextSceneIndex);
         }
         else
         {
+            audioManager.PlayLevelMusic(0);
             SceneManager.LoadScene(0);
         }
-
     }
 
 }

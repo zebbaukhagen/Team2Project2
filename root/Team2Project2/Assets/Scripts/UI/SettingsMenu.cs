@@ -54,7 +54,6 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetFullScreen(bool isFullScreen)
     {
-        aManager.ClickSound();
         Screen.fullScreen = isFullScreen;
     }
 
