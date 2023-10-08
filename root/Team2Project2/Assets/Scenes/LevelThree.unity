@@ -1178,6 +1178,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 157fdfafdb67d134991a4f329db37f70, type: 3}
   m_PrefabInstance: {fileID: 112112540}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &118935849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4624353005990142697, guid: fa4f8b9ca422043479680ee4850e299b, type: 3}
+  m_PrefabInstance: {fileID: 552375404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &128281640 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8830255404888084653, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
@@ -4335,6 +4340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c90915cf0d63c4d9fdefa6144a1cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  connectedDoor: {fileID: 0}
 --- !u!1001 &540155755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16011,6 +16017,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 530600258}
     m_Modifications:
+    - target: {fileID: 3066448904445863023, guid: 8b6d9e5206b02ff44b2ac520bed30e8c, type: 3}
+      propertyPath: matchingFuse
+      value: 
+      objectReference: {fileID: 118935849}
+    - target: {fileID: 3066448904445863023, guid: 8b6d9e5206b02ff44b2ac520bed30e8c, type: 3}
+      propertyPath: connectedCeilingLight
+      value: 
+      objectReference: {fileID: 1279936623}
     - target: {fileID: 3693521114654492331, guid: 8b6d9e5206b02ff44b2ac520bed30e8c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
