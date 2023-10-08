@@ -5,7 +5,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    [SerializeField] private AudioClip[] audioClips;// holds the background music
+    [SerializeField] private AudioClip[] backGroundClips;// holds the background music
+    [SerializeField] private AudioClip[] audioClips;
     [SerializeField] private AudioSource backGroundMusic;
     [SerializeField] private AudioSource clickSound;
     private int currentAudioIndex = 0;
@@ -32,14 +33,14 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
- 
+        PlayNextAudioClip();
     }
 
     public void PlayNextAudioClip()
     {
-        if (currentAudioIndex < 1)
+        if (currentAudioIndex < backGroundClips.Length)
         {
-            backGroundMusic.clip = audioClips[currentAudioIndex];
+            backGroundMusic.clip = backGroundClips[currentAudioIndex];
             backGroundMusic.Play();
             currentAudioIndex++;
         }
@@ -48,7 +49,7 @@ public class AudioManager : MonoBehaviour
 
     public void ClickSound()
     {
-       clickSound.clip = audioClips[2];
+       clickSound.clip = audioClips[0];
        clickSound.Play();
         
     }
