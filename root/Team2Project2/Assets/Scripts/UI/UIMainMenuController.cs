@@ -11,7 +11,9 @@ public class UIMainMenuController : MonoBehaviour
     [SerializeField] private GameObject settingsMenu;
     private static UIMainMenuController instance;
     [SerializeField] private AudioManager aManager;
- 
+    [SerializeField] private GameObject creditsMenu;
+    [SerializeField] private InstructionsPanel instructions;
+
 
     public static UIMainMenuController Instance
     {
@@ -40,6 +42,7 @@ public class UIMainMenuController : MonoBehaviour
 
     public void GoToLevelOne()
     {
+        aManager.ClickSound();
         SceneManager.LoadScene(2);
         aManager.PlayNextAudioClip();
     }
@@ -64,13 +67,21 @@ public class UIMainMenuController : MonoBehaviour
 
     public void OpenInstructions()
     {
+        aManager.ClickSound();
         instructionsPanel.SetActive(!instructionsPanel.activeSelf);
+        instructions.LevelOneSelected();
     }
 
     public void OpenSettings()
     {
         aManager.ClickSound();
         settingsMenu.SetActive(!settingsMenu.activeSelf);
+    }
+
+    public void OpenCredits()
+    {
+        aManager.ClickSound();
+        creditsMenu.SetActive(!creditsMenu.activeSelf);
     }
 
     public void QuitGame()

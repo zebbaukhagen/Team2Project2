@@ -7,6 +7,7 @@ public class UILevelController : MonoBehaviour
     [SerializeField] private GameObject pauseMenuPanel;
     private static UILevelController instance;
     [SerializeField] private PauseMenu pauseMenu;
+    [SerializeField] private AudioManager aManager;
 
     public static UILevelController Instance
     {
@@ -41,6 +42,7 @@ public class UILevelController : MonoBehaviour
 
     public void OpenSettings()
     {
+        aManager.ClickSound();
         settingsMenu.SetActive(!settingsMenu.activeSelf);
     }
 
@@ -48,17 +50,20 @@ public class UILevelController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            aManager.ClickSound();
             pauseMenu.PauseGame();
         }
     }
 
     public void BackToMainMenu()
     {
+        aManager.ClickSound();
         SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
     {
+        aManager.ClickSound();
         Application.Quit();
         Debug.Log("Game has been quit");
     }

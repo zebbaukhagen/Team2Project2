@@ -207,8 +207,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 117869949}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: OpenInstructions
+        m_TargetAssemblyTypeName: UIMainMenuController, Assembly-CSharp
+        m_MethodName: OpenCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -577,6 +577,8 @@ MonoBehaviour:
   instructionsPanel: {fileID: 179392414}
   settingsMenu: {fileID: 1122917673}
   aManager: {fileID: 1962270845}
+  creditsMenu: {fileID: 1227737706}
+  instructions: {fileID: 179392418}
 --- !u!1 &179392414
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &179392415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,10 +658,10 @@ RectTransform:
   - {fileID: 977136790}
   m_Father: {fileID: 1643600209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &179392418
 MonoBehaviour:
@@ -673,12 +675,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475a2f86e7cf2ec46a65a957370c7243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelOneButton: {fileID: 0}
-  LevelTwoButton: {fileID: 0}
-  LevelThreeButton: {fileID: 0}
+  LevelOneButton: {fileID: 1348870794}
+  LevelTwoButton: {fileID: 1178489689}
+  LevelThreeButton: {fileID: 1262209773}
   levelTitleText: {fileID: 1623809686}
   levelDetails: {fileID: 977136788}
   levelJump: {fileID: 117869949}
+  aManager: {fileID: 1962270845}
 --- !u!1 &449580079
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,8 +994,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 117869949}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: OpenSettings
+        m_TargetAssemblyTypeName: UIMainMenuController, Assembly-CSharp
+        m_MethodName: OpenCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1490,13 +1493,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 179392418}
+        m_TargetAssemblyTypeName: InstructionsPanel, Assembly-CSharp
+        m_MethodName: LevelTwoSelected
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1595,7 +1598,7 @@ PrefabInstance:
     - target: {fileID: 3798729630837080734, guid: 1c07647ea616b3d4f9d2f7b9db197db3, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 31f768a1dd794db418d5ec6bf5c17be7, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4586388824021573418, guid: 1c07647ea616b3d4f9d2f7b9db197db3, type: 3}
       propertyPath: clickSound
       value: 
@@ -1606,7 +1609,7 @@ PrefabInstance:
       objectReference: {fileID: 1962270846}
     - target: {fileID: 4586388824021573418, guid: 1c07647ea616b3d4f9d2f7b9db197db3, type: 3}
       propertyPath: audioClips.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4586388824021573418, guid: 1c07647ea616b3d4f9d2f7b9db197db3, type: 3}
       propertyPath: audioSource.Array.size
@@ -1615,7 +1618,7 @@ PrefabInstance:
     - target: {fileID: 4586388824021573418, guid: 1c07647ea616b3d4f9d2f7b9db197db3, type: 3}
       propertyPath: audioClips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 31f768a1dd794db418d5ec6bf5c17be7, type: 3}
+      objectReference: {fileID: 8300000, guid: 409b0ef2f9d508c4f8cb95cd773ad095, type: 3}
     - target: {fileID: 4586388824021573418, guid: 1c07647ea616b3d4f9d2f7b9db197db3, type: 3}
       propertyPath: audioClips.Array.data[1]
       value: 
@@ -1632,6 +1635,18 @@ PrefabInstance:
       propertyPath: audioSource.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4586388824021573418, guid: 1c07647ea616b3d4f9d2f7b9db197db3, type: 3}
+      propertyPath: backGroundClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586388824021573418, guid: 1c07647ea616b3d4f9d2f7b9db197db3, type: 3}
+      propertyPath: backGroundClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 31f768a1dd794db418d5ec6bf5c17be7, type: 3}
+    - target: {fileID: 4586388824021573418, guid: 1c07647ea616b3d4f9d2f7b9db197db3, type: 3}
+      propertyPath: backGroundClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 463f39c8c1318b74ca1428aebc68ddae, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1806,10 +1821,10 @@ RectTransform:
   - {fileID: 56787468}
   m_Father: {fileID: 1643600209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1227737708
 MonoBehaviour:
@@ -2065,13 +2080,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 179392418}
+        m_TargetAssemblyTypeName: InstructionsPanel, Assembly-CSharp
+        m_MethodName: LevelThreeSelected
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2407,13 +2422,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 179392418}
+        m_TargetAssemblyTypeName: InstructionsPanel, Assembly-CSharp
+        m_MethodName: LevelOneSelected
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4415,6 +4430,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8635873252792506090, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
+      propertyPath: aManager
+      value: 
+      objectReference: {fileID: 1962270845}
     - target: {fileID: 8713718473302106182, guid: c6b0efa4b10609f40a64b0c21108d4eb, type: 3}
       propertyPath: m_Name
       value: SettingsMenu

@@ -68,16 +68,19 @@ public class PauseMenu : MonoBehaviour
     
     public void ResumeGame()
     {
+        audioManager.ClickSound();
         pauseMenu.SetActive(false);
     }
 
     public void OpenSettings()
     {
+        audioManager.ClickSound();
         settingsMenu.SetActive(!settingsMenu.activeSelf);
     }
 
     public void BackToMainMenu()
     {
+        audioManager.ClickSound();
         togglePauseGame = false;
         uiController.BackToMainMenu();
         pauseMenu.SetActive(false);
