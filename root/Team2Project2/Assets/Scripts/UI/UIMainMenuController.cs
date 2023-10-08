@@ -42,9 +42,9 @@ public class UIMainMenuController : MonoBehaviour
 
     public void GoToLevelOne()
     {
-        aManager.ClickSound();
+        // aManager.ClickSound();
         SceneManager.LoadScene(2);
-        aManager.PlayNextAudioClip();
+        // aManager.PlayNextAudioClip();
     }
 
     public void NextLevel()
@@ -56,7 +56,7 @@ public class UIMainMenuController : MonoBehaviour
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(nextSceneIndex);
-            aManager.PlayNextAudioClip ();
+            // aManager.PlayNextAudioClip ();
         }
         else
         {
@@ -67,20 +67,20 @@ public class UIMainMenuController : MonoBehaviour
 
     public void OpenInstructions()
     {
-        aManager.ClickSound();
+        // aManager.ClickSound();
         instructionsPanel.SetActive(!instructionsPanel.activeSelf);
         instructions.LevelOneSelected();
     }
 
     public void OpenSettings()
     {
-        aManager.ClickSound();
+        // aManager.ClickSound();
         settingsMenu.SetActive(!settingsMenu.activeSelf);
     }
 
     public void OpenCredits()
     {
-        aManager.ClickSound();
+        // aManager.ClickSound();
         creditsMenu.SetActive(!creditsMenu.activeSelf);
     }
 
