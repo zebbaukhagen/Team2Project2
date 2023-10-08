@@ -17,8 +17,6 @@ public class AudioManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            backGroundMusic = GetComponent<AudioSource>();
-            clickSound = GetComponent<AudioSource>();
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -54,4 +52,22 @@ public class AudioManager : MonoBehaviour
        clickSound.Play();
         
     }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Re-enable the AudioSources
+        backGroundMusic.enabled = true;
+        clickSound.enabled = true;
+    }
+
 }
