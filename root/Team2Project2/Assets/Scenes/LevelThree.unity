@@ -2851,6 +2851,10 @@ PrefabInstance:
       value: FuseBox
       objectReference: {fileID: 0}
     - target: {fileID: 3999769273858428498, guid: 8b6d9e5206b02ff44b2ac520bed30e8c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999769273858428498, guid: 8b6d9e5206b02ff44b2ac520bed30e8c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -13619,6 +13623,10 @@ PrefabInstance:
       value: FuseBox (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3999769273858428498, guid: 8b6d9e5206b02ff44b2ac520bed30e8c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999769273858428498, guid: 8b6d9e5206b02ff44b2ac520bed30e8c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -15796,6 +15804,10 @@ PrefabInstance:
       value: FuseBox (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3999769273858428498, guid: 8b6d9e5206b02ff44b2ac520bed30e8c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999769273858428498, guid: 8b6d9e5206b02ff44b2ac520bed30e8c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -17196,6 +17208,8 @@ SceneRoots:
   - {fileID: 1566161741}
   - {fileID: 2124683888}
   - {fileID: 1209490437}
+  - {fileID: 1120394259}
+  - {fileID: 895844898}
   - {fileID: 800947567}
   - {fileID: 1948673024}
   - {fileID: 345352975}
@@ -17203,8 +17217,6 @@ SceneRoots:
   - {fileID: 552995392}
   - {fileID: 336243972}
   - {fileID: 1691396360}
-  - {fileID: 1120394259}
-  - {fileID: 895844898}
   - {fileID: 2009052867}
   - {fileID: 7659108784759045648}
   - {fileID: 1954051632}
