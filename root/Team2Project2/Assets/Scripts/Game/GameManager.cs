@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("GameManager awakened.");
         // Ensure only one instance of GameManager exists
         if (instance == null)
         {
@@ -19,9 +20,14 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            Debug.Log("GameManager destroyed.");
         }
+    }
 
+    private void Start()
+    {
         audioManager = AudioManager.instance;
+        Debug.Log("audioManager instance is equal to " + audioManager);
     }
 
     private void Update()

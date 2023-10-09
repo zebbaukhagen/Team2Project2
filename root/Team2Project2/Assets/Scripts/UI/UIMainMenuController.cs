@@ -12,25 +12,7 @@ public class UIMainMenuController : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private GameObject creditsMenu;
     [SerializeField] private InstructionsPanel instructions;
-
-    private static UIMainMenuController instance;
-
-    public static UIMainMenuController Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<UIMainMenuController>();
-                if (instance == null)
-                {
-                    GameObject singletonObject = new GameObject("UIMainMenuController");
-                    instance = singletonObject.AddComponent<UIMainMenuController>();
-                }
-            }
-            return instance;
-        }
-    }
+    private GameManager gameManager;
 
     private void Start()
     {
@@ -38,11 +20,12 @@ public class UIMainMenuController : MonoBehaviour
         instructionsPanel.SetActive(false);
         settingsMenu.SetActive(false);
         audioManager = AudioManager.instance;
+        gameManager = GameManager.instance;
     }
 
     public void GoToLevelOne()
     {
-        GameManager.instance.LoadLevel(1);
+        gameManager.LoadLevel(1);
     }
 
     public void OpenInstructions()
