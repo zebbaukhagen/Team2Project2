@@ -27,7 +27,7 @@ public class IntroTransition : MonoBehaviour
         foreach (GameObject panel in listOfPanels)
         {
             panel.SetActive(true);
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(2.5f);
             panel.SetActive(false);
         }
         GameManager.instance.NextLevel();
