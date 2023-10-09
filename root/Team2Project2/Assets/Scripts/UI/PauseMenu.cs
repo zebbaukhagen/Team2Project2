@@ -21,6 +21,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         settingsMenu.SetActive(false);
+        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
