@@ -53,7 +53,7 @@ public class PauseMenu : MonoBehaviour
             }
             if(SceneManager.GetActiveScene().name == "LevelThree")
             {
-                levelPrompt.text = "Level 1: Escape The Roomba! ";
+                levelPrompt.text = "Level 3: Escape The Roomba! ";
             }
         }
         else
