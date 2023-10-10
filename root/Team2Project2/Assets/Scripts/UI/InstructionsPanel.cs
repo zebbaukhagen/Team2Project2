@@ -43,7 +43,7 @@ public class InstructionsPanel : MonoBehaviour
 
     public void LevelThreeSelected() 
     {
-        levelTitleText.text = " Level Three: Roombas are hungry!";
+        levelTitleText.text = " Level Three: Avoid the Roombas!";
         levelDetails.text = "Maneuver through the maze, collecting fuse pickups that are needed to unlock the Scientist Lab. Avoid the Roombas, make your escape, then extract revenge on your abuser ";
     }
 }
