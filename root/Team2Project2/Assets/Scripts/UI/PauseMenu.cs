@@ -62,6 +62,7 @@ public class PauseMenu : MonoBehaviour
             //audioManager.PlayMusic();
             togglePauseGame = false;
             pauseMenu.SetActive(false);
+            settingsMenu.SetActive(false);
             playerController.enabled = true;
             Time.timeScale = 1f;
         }
