@@ -1140,6 +1140,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db6b41a7283f4e54992de4cbbc01d9f6, type: 3}
+--- !u!82 &97538495 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3733275408097770714, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+  m_PrefabInstance: {fileID: 1720328437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &97538497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1478417251748923377, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+  m_PrefabInstance: {fileID: 1720328437}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff97d37c3788a8a42b568610df5e7922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &108354719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2263,6 +2279,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1478417251748923377, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+      propertyPath: finishDoor
+      value: 
+      objectReference: {fileID: 580436010}
+    - target: {fileID: 1478417251748923377, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 238349562}
+    - target: {fileID: 6124109391948625663, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+      propertyPath: m_TagString
+      value: PowerReceiver
+      objectReference: {fileID: 0}
     - target: {fileID: 7816264645392549409, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
       propertyPath: m_Name
       value: PowerReceiver
@@ -2277,6 +2305,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1380380815458771574, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
   m_PrefabInstance: {fileID: 238349559}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &238349562 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3733275408097770714, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+  m_PrefabInstance: {fileID: 238349559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &238349564 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1478417251748923377, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+  m_PrefabInstance: {fileID: 238349559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff97d37c3788a8a42b568610df5e7922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &242588192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5560,6 +5604,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1478417251748923377, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+      propertyPath: finishDoor
+      value: 
+      objectReference: {fileID: 1025739426}
+    - target: {fileID: 1478417251748923377, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 799201629}
+    - target: {fileID: 6124109391948625663, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+      propertyPath: m_TagString
+      value: PowerReceiver
+      objectReference: {fileID: 0}
     - target: {fileID: 7816264645392549409, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
       propertyPath: m_Name
       value: PowerReceiver
@@ -7982,6 +8038,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 30.062, z: 0}
+--- !u!82 &799201629 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3733275408097770714, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+  m_PrefabInstance: {fileID: 536325544}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &799201631 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1478417251748923377, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+  m_PrefabInstance: {fileID: 536325544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff97d37c3788a8a42b568610df5e7922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &799434793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8156,7 +8228,7 @@ PrefabInstance:
     - target: {fileID: 5603930861496059968, guid: 776542749ecc8394a8ec949ae0afd2e0, type: 3}
       propertyPath: pairedReceiver
       value: 
-      objectReference: {fileID: 1385562624}
+      objectReference: {fileID: 799201631}
     - target: {fileID: 8965710976349532027, guid: 776542749ecc8394a8ec949ae0afd2e0, type: 3}
       propertyPath: m_Name
       value: PowerSource
@@ -11755,17 +11827,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 8.801, z: 0}
---- !u!114 &1062315711 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 20239410232127411, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
-  m_PrefabInstance: {fileID: 1720328437}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff97d37c3788a8a42b568610df5e7922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1062870032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12821,7 +12882,7 @@ PrefabInstance:
     - target: {fileID: 5603930861496059968, guid: 776542749ecc8394a8ec949ae0afd2e0, type: 3}
       propertyPath: pairedReceiver
       value: 
-      objectReference: {fileID: 1062315711}
+      objectReference: {fileID: 97538497}
     - target: {fileID: 8965710976349532027, guid: 776542749ecc8394a8ec949ae0afd2e0, type: 3}
       propertyPath: m_Name
       value: PowerSource
@@ -15203,17 +15264,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b463df97936c5e342a7b3107bb3d1cd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1385562624 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 20239410232127411, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
-  m_PrefabInstance: {fileID: 536325544}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff97d37c3788a8a42b568610df5e7922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1389901090
@@ -18455,17 +18505,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73b2a667a27fa544196a68e12752e216, type: 3}
   m_PrefabInstance: {fileID: 1564717175}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1578665775 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 20239410232127411, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
-  m_PrefabInstance: {fileID: 238349559}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff97d37c3788a8a42b568610df5e7922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1578763896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19755,6 +19794,18 @@ PrefabInstance:
     - target: {fileID: 1380380815458771574, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478417251748923377, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+      propertyPath: finishDoor
+      value: 
+      objectReference: {fileID: 336535540}
+    - target: {fileID: 1478417251748923377, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 97538495}
+    - target: {fileID: 6124109391948625663, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
+      propertyPath: m_TagString
+      value: PowerReceiver
       objectReference: {fileID: 0}
     - target: {fileID: 7816264645392549409, guid: fe8c84a4631182f4a841741a3768d7c3, type: 3}
       propertyPath: m_Name
@@ -23964,7 +24015,7 @@ PrefabInstance:
     - target: {fileID: 5603930861496059968, guid: 776542749ecc8394a8ec949ae0afd2e0, type: 3}
       propertyPath: pairedReceiver
       value: 
-      objectReference: {fileID: 1578665775}
+      objectReference: {fileID: 238349564}
     - target: {fileID: 8965710976349532027, guid: 776542749ecc8394a8ec949ae0afd2e0, type: 3}
       propertyPath: m_Name
       value: PowerSource
