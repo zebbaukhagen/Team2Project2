@@ -8,8 +8,13 @@ public class SwitchPuzzle : MonoBehaviour
     [SerializeField] private List<SwitchTile> listOfTiles = new();
     [SerializeField] private List<FireController> listOfFireControllers = new();
     [SerializeField] private Door finishDoor;
+    private PuzzleAudio puzzleAudio;
     private bool puzzleSolved = false;
-    
+
+    private void Awake()
+    {
+        puzzleAudio = GameObject.Find("Level1Audio").GetComponent<PuzzleAudio>();
+    }
 
     public void CheckForSolution()
     {
@@ -20,6 +25,7 @@ public class SwitchPuzzle : MonoBehaviour
             {
                 // if so, puzzle is solved
                 Debug.Log("Puzzle Solved!");
+                puzzleAudio.PlaySolvedClip();
                 puzzleSolved = true;
                 OpenFinishDoor();
                 TurnFiresOff();

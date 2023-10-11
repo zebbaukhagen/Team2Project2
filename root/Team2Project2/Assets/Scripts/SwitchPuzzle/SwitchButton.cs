@@ -7,6 +7,8 @@ public class SwitchButton : MonoBehaviour
     [SerializeField] private List<Door> listOfConnectedDoors = new();
     [SerializeField] private List<FireController> listOfConnectedFires = new();
 
+    private PuzzleAudio puzzleAudio;
+
     private bool hasConnectedTiles = false;
     private bool hasConnectedDoors = false;
     private bool hasConnectedFires = false;
@@ -16,6 +18,7 @@ public class SwitchButton : MonoBehaviour
     private void Awake()
     {
         parentPuzzle = GetComponentInParent<SwitchPuzzle>();
+        puzzleAudio = GameObject.Find("Level1Audio").GetComponent<PuzzleAudio>();
         if (listOfConnectedTiles.Count > 0) hasConnectedTiles = true;
         if (listOfConnectedDoors.Count > 0) hasConnectedDoors = true;
         if (listOfConnectedFires.Count > 0) hasConnectedFires = true;
@@ -27,6 +30,7 @@ public class SwitchButton : MonoBehaviour
         // activates toggling on player collision
         if (other.CompareTag("Player"))
         {
+            puzzleAudio.PlayRandomPuzzleClip();
             Debug.Log("Player collided with button.");
             if (hasConnectedTiles)
             {

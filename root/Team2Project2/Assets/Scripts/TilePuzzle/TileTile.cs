@@ -7,6 +7,7 @@ public class TileTile : MonoBehaviour
     [SerializeField] private TileSlot _parentSlot;
     [SerializeField] private GameObject _rat;
     [SerializeField] private GameObject prefabParent;
+    private PuzzleAudio puzzleAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class TileTile : MonoBehaviour
         {
             _rat = GameObject.Find("Rat");
         }
+        puzzleAudio = GameObject.Find("Puzzle2Audio").GetComponent<PuzzleAudio>();
     }
 
     // Update is called once per frame
@@ -57,6 +59,7 @@ public class TileTile : MonoBehaviour
                 Vector3 newPosition = possibleEmptyParent.transform.position;
                 _parentSlot = possibleEmptyParent;
                 _parentSlot.AcceptNewChild(this);
+                puzzleAudio.PlayRandomPuzzleClip();
                 StartCoroutine(LerpPosition(newPosition, 1));
             }
             else

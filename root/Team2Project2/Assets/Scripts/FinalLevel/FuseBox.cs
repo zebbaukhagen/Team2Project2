@@ -7,6 +7,8 @@ public class FuseBox : MonoBehaviour
     [SerializeField] private LightFlicker flickerScript;
     [SerializeField] private Light fuseBoxLight;
     [SerializeField] private GameObject connectedCeilingLight;
+    [SerializeField] private AudioSource audioSource;
+    private bool invoked = false;
 
     // Declare the puzzle solved event
     public static event System.Action OnPuzzleSolved;
@@ -27,12 +29,16 @@ public class FuseBox : MonoBehaviour
         if (fuse == matchingFuse)
         {
             Debug.Log("Correct fuse!");
-            AcceptFuse(fuse);
+            if (invoked == false)
+            {
+                AcceptFuse(fuse);
+            }
         }
     }
 
     private void AcceptFuse(GameObject fuse)
     {
+        invoked = true;
         // Takes the matching fuse from the player, sets the parent and the transform
         Rigidbody fuseRB = fuse.GetComponent<Rigidbody>();
         fuseRB.isKinematic = true;
@@ -40,12 +46,14 @@ public class FuseBox : MonoBehaviour
         flickerScript.CancelCoroutines();
         fuseBoxLight.enabled = true;
         TurnLightsOn();
+        audioSource.Play();
     }
 
     private void TurnLightsOn()
     {
         // Activates the connected lights and checks the level for completion
         connectedCeilingLight.SetActive(true);
+        Debug.Log("Invoking PuzzleSolved.");
         OnPuzzleSolved?.Invoke();
     }
 }

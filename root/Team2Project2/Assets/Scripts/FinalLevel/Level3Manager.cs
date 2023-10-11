@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Level3Manager : MonoBehaviour
 {
-    [SerializeField] Door connectedDoor;
+    [SerializeField] private Door connectedDoor;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private GameObject finishLight;
 
     private int puzzlesSolved = 0;
     private readonly int totalPuzzles = 3;  // Replace with your total number of puzzles
@@ -31,7 +33,9 @@ public class Level3Manager : MonoBehaviour
         if (puzzlesSolved >= totalPuzzles)
         {
             Debug.Log("You've solved all puzzles! You win!");
-            // Your win logic here
+            audioSource.Play();
+            connectedDoor.ToggleDoor();
+            finishLight.SetActive(true);
         }
     }
 }
