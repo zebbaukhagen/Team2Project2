@@ -46,5 +46,15 @@ public class InstructionsPanel : MonoBehaviour
         levelTitleText.text = " Level Three: Avoid the Roombas!";
         levelDetails.text = "Maneuver through the maze, collecting fuse pickups that are needed to unlock the Scientist Lab. Avoid the Roombas, make your escape, then extract revenge on your abuser ";
     }
+
+    public void GameControls()
+    {
+        levelTitleText.text = "Game Controls";
+        levelDetails.text = "Press A to Move LEFT, \n" +
+            "Press W to move UP, \n" +
+            "Press S to move DOWN, \n" +
+            "Press D to move RIGHT.\n" +
+            "You can also use the arrow keys to move as well. \n";       
+    }
 }
 
