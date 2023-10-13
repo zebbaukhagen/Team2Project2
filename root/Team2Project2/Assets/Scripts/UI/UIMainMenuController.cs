@@ -12,6 +12,7 @@ public class UIMainMenuController : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private GameObject creditsMenu;
     [SerializeField] private InstructionsPanel instructions;
+    [SerializeField] private GameObject levelSelect;
     private GameManager gameManager;
 
     private void Start()
@@ -42,6 +43,11 @@ public class UIMainMenuController : MonoBehaviour
     public void OpenCredits()
     {
         creditsMenu.SetActive(!creditsMenu.activeSelf);
+    }
+
+    public void OpenLevelSelect()
+    {
+        levelSelect.SetActive(!levelSelect.activeSelf);
     }
 
     public void QuitGame()

@@ -7,7 +7,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     private AudioManager audioManager;
+    private List<bool> listOfLevelsCompleted = new List<bool>();
+    private bool levelOneCompleted = false;
+    private bool levelTwoCompleted = false;
+    private bool levelThreeCompleted = false;
 
+    public List<bool> ListOfLevelsCompleted
+    {
+        get => listOfLevelsCompleted;
+        private set => listOfLevelsCompleted = value;
+    }
     private void Awake()
     {
         Debug.Log("GameManager awakened.");
@@ -28,6 +37,9 @@ public class GameManager : MonoBehaviour
     {
         audioManager = AudioManager.instance;
         Debug.Log("audioManager instance is equal to " + audioManager);
+        listOfLevelsCompleted.Add(levelOneCompleted);
+        listOfLevelsCompleted.Add(levelTwoCompleted);
+        listOfLevelsCompleted.Add(levelThreeCompleted);
     }
 
     private void Update()
