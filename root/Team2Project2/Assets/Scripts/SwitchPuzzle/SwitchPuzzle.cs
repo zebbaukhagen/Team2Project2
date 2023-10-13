@@ -7,6 +7,7 @@ public class SwitchPuzzle : MonoBehaviour
 {
     [SerializeField] private List<SwitchTile> listOfTiles = new();
     [SerializeField] private List<FireController> listOfFireControllers = new();
+    [SerializeField] private List<Light> listOfLights = new();
     [SerializeField] private Door finishDoor;
     private PuzzleAudio puzzleAudio;
     private bool puzzleSolved = false;
@@ -29,6 +30,7 @@ public class SwitchPuzzle : MonoBehaviour
                 puzzleSolved = true;
                 OpenFinishDoor();
                 TurnFiresOff();
+                TurnLightsOn();
             }
         }
     }
@@ -52,6 +54,15 @@ public class SwitchPuzzle : MonoBehaviour
             {
                 fire.ToggleParticleSystem();
             }
+        }
+    }
+
+    private void TurnLightsOn()
+    {
+        if (listOfLights.Count == 0) { Debug.Log("No lights attached."); }
+        foreach (Light light in listOfLights)
+        {
+            light.enabled = true;
         }
     }
 
