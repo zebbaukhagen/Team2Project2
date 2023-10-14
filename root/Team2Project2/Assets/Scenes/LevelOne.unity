@@ -2748,7 +2748,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1706449857}
-  - {fileID: 1582891199}
   - {fileID: 1553136607}
   - {fileID: 727823007}
   - {fileID: 1033159624}
@@ -2771,7 +2770,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listOfTiles: []
   listOfFireControllers: []
-  listOfLights: []
+  listOfLights:
+  - {fileID: 1706449856}
   finishDoor: {fileID: 2144763548}
 --- !u!4 &317984194 stripped
 Transform:
@@ -5597,79 +5597,6 @@ Transform:
   - {fileID: 2018419909}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &786060599
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 307374645}
-    m_Modifications:
-    - target: {fileID: 4991135737409345780, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_Name
-      value: SwitchLight
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.291212
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0460186
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 8.231634
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70710784
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.70710576
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: efa00ae2477821046941410837290824, type: 3}
 --- !u!4 &786107636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73b2a667a27fa544196a68e12752e216, type: 3}
@@ -10732,22 +10659,6 @@ Transform:
   - {fileID: 763732728}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1582891195 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5358298955162942644, guid: efa00ae2477821046941410837290824, type: 3}
-  m_PrefabInstance: {fileID: 786060599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01eff2c8725596d459e0ac09fd5b2131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1582891199 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5624929065513960014, guid: efa00ae2477821046941410837290824, type: 3}
-  m_PrefabInstance: {fileID: 786060599}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1585465148 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7899186855544950640, guid: c6a058e28ac9b23489f5d742bcca482b, type: 3}
@@ -12903,7 +12814,7 @@ PrefabInstance:
     - target: {fileID: 322665847722061931, guid: ebcfc514ae3540c4ba93fe3bdd6220ea, type: 3}
       propertyPath: listOfConnectedTiles.Array.data[0]
       value: 
-      objectReference: {fileID: 1582891195}
+      objectReference: {fileID: 0}
     - target: {fileID: 1327961115579279601, guid: ebcfc514ae3540c4ba93fe3bdd6220ea, type: 3}
       propertyPath: m_Name
       value: SwitchButton - Last
