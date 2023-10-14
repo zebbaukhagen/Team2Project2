@@ -37,9 +37,7 @@ public class GameManager : MonoBehaviour
     {
         audioManager = AudioManager.instance;
         Debug.Log("audioManager instance is equal to " + audioManager);
-        listOfLevelsCompleted.Add(levelOneCompleted);
-        listOfLevelsCompleted.Add(levelTwoCompleted);
-        listOfLevelsCompleted.Add(levelThreeCompleted);
+        InitializeLevelCompletionList();
     }
 
     private void Update()
@@ -47,8 +45,16 @@ public class GameManager : MonoBehaviour
         CheatCodes();
     }
 
+    private void InitializeLevelCompletionList()
+    {
+        listOfLevelsCompleted.Add(levelOneCompleted);
+        listOfLevelsCompleted.Add(levelTwoCompleted);
+        listOfLevelsCompleted.Add(levelThreeCompleted);
+    }
+
     public void NextLevel()
     {
+        // goes to the next scene regardless of current scene, in a circle
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
@@ -64,8 +70,15 @@ public class GameManager : MonoBehaviour
 
     public void LoadLevel(int buildIndexOfSceneToLoad)
     {
+        // loads the appropriate level and music
         audioManager.PlayLevelMusic(buildIndexOfSceneToLoad);
         SceneManager.LoadScene(buildIndexOfSceneToLoad);
+    }
+
+    public void MarkPuzzleComplete(int levelToMark)
+    {
+        // marks the corresponding level as completed for level select
+        ListOfLevelsCompleted[levelToMark] = true;
     }
 
     private void CheatCodes()
