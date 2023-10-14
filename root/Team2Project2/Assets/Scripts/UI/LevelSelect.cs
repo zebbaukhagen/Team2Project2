@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LevelSelect : MonoBehaviour
 {
     [SerializeField] private List<Sprite> coloredImages = new();
-    [SerializeField] private List<RawImage> levelImages = new();
+    [SerializeField] private List<Image> levelImages = new();
     [SerializeField] private List<Button> levelButtons = new();
 
     private GameManager gameManager;
@@ -20,11 +20,17 @@ public class LevelSelect : MonoBehaviour
     {
         foreach (bool level in gameManager.ListOfLevelsCompleted)
         {
-            int currentIndex = gameManager.ListOfLevelsCompleted[level];
+            int currentIndex = gameManager.ListOfLevelsCompleted.IndexOf(level);
             if (level)
             {
-
+                levelImages[currentIndex].sprite = coloredImages[currentIndex];
+                levelButtons[currentIndex].interactable = true;
             }
         }
+    }
+
+    public void OnClickLevelSelect(int buttonNumber)
+    {
+        gameManager.LoadLevel(buttonNumber + 2);
     }
 }

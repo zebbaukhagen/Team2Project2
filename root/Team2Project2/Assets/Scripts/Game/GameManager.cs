@@ -78,7 +78,8 @@ public class GameManager : MonoBehaviour
     public void MarkPuzzleComplete(int levelToMark)
     {
         // marks the corresponding level as completed for level select
-        ListOfLevelsCompleted[levelToMark] = true;
+        listOfLevelsCompleted[levelToMark] = true;
+        Debug.Log("level one completed? " + levelOneCompleted);
     }
 
     private void CheatCodes()
