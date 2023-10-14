@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCollisions : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PlayerCollisions : MonoBehaviour
         }
         else if(other.CompareTag("LevelExit"))
         {
+            SetLevelCompleted();
             GameManager.instance.NextLevel();
         }
     }
@@ -28,5 +30,11 @@ public class PlayerCollisions : MonoBehaviour
     private void Respawn()
     {
         gameObject.transform.position = respawnPoint.position;
+    }
+
+    private void SetLevelCompleted()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        GameManager.instance.MarkPuzzleComplete(currentScene - 2);
     }
 }

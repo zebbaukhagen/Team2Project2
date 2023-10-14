@@ -9,7 +9,6 @@ public class SwitchPuzzle : MonoBehaviour
     [SerializeField] private List<FireController> listOfFireControllers = new();
     [SerializeField] private List<Light> listOfLights = new();
     [SerializeField] private Door finishDoor;
-    [SerializeField] private Level1Manager level1Manager;
     private PuzzleAudio puzzleAudio;
     private bool puzzleSolved = false;
 
@@ -32,10 +31,6 @@ public class SwitchPuzzle : MonoBehaviour
                 OpenFinishDoor();
                 TurnFiresOff();
                 TurnLightsOn();
-                if (level1Manager != null)
-                {
-                    level1Manager
-                }
             }
         }
     }
