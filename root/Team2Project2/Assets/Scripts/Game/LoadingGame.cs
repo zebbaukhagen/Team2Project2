@@ -27,7 +27,7 @@ public class LoadingGame : MonoBehaviour
         foreach (GameObject panel in listOfPanels)
         {
             panel.SetActive(true);
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1.25f);
             panel.SetActive(false);
         }
         GameManager.instance.NextLevel();

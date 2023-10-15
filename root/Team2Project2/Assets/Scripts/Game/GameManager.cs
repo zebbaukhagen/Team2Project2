@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         audioManager = AudioManager.instance;
         Debug.Log("audioManager instance is equal to " + audioManager);
         InitializeLevelCompletionList();
-        Debug.Log(ListOfLevelsCompleted[0]);
+        
         
     }
 
@@ -107,10 +107,5 @@ public class GameManager : MonoBehaviour
         {
             LoadLevel(4);
         }
-    }
-
-    public void PrintContentsOfList()
-    {
-        Debug.Log(ListOfLevelsCompleted[0]);
     }
 }

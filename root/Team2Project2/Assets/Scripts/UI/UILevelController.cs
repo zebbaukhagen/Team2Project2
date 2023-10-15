@@ -55,8 +55,7 @@ public class UILevelController : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        GameManager.instance.LoadLevel(0);
-        GameManager.instance.PrintContentsOfList();
+        GameManager.instance.LoadLevel(1);
     }
 
     public void QuitGame()

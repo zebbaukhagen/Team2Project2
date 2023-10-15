@@ -26,7 +26,7 @@ public class UIMainMenuController : MonoBehaviour
 
     public void GoToLevelOne()
     {
-        gameManager.LoadLevel(1);
+        gameManager.LoadLevel(2);
     }
 
     public void OpenInstructions()
