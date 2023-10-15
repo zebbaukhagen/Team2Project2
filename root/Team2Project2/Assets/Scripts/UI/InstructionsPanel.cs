@@ -32,7 +32,7 @@ public class InstructionsPanel : MonoBehaviour
     public void LevelOneSelected()
     {
         levelTitleText.text = " Level One: Escape the Flames";
-        levelDetails.text = "Complete the following binary puzzles to turn off the fires blocking the doors, and scamper your way to the exit progressing to Level Two";
+        levelDetails.text = "Complete the following binary puzzles to turn off the fires blocking the doors and scamper your way to the exit progressing to Level Two";
     }
 
     public void LevelTwoSelected()
