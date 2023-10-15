@@ -16,6 +16,11 @@ public class LevelSelect : MonoBehaviour
         gameManager = GameManager.instance;
     }
 
+    private void Update()
+    {
+        InitializeButtons();
+    }
+
     private void InitializeButtons()
     {
         foreach (bool level in gameManager.ListOfLevelsCompleted)
@@ -32,6 +37,6 @@ public class LevelSelect : MonoBehaviour
 
     public void OnClickLevelSelect(int buttonNumber)
     {
-        gameManager.LoadLevel(buttonNumber + 2);
+        gameManager.LoadLevel(buttonNumber + 3);
     }
 }

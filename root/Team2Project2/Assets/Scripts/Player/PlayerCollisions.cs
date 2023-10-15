@@ -36,7 +36,7 @@ public class PlayerCollisions : MonoBehaviour
     private void SetLevelCompleted()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
-        GameManager.instance.MarkPuzzleComplete(currentScene - 2);
+        GameManager.instance.MarkPuzzleComplete(currentScene - 3);
         Debug.Log("Calling SetLevelCompleted on level: " + currentScene);
     }
 }
