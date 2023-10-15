@@ -107,5 +107,13 @@ public class GameManager : MonoBehaviour
         {
             LoadLevel(4);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            LoadLevel(5);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            LoadLevel(6);
+        }
     }
 }

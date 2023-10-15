@@ -13803,11 +13803,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2347786111919207070, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2347786111919207070, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2717201371781756703, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMax.x
@@ -13943,7 +13943,7 @@ PrefabInstance:
       objectReference: {fileID: 1301965975}
     - target: {fileID: 5781675613461923440, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToMainMenu
+      value: OpenSettings
       objectReference: {fileID: 0}
     - target: {fileID: 5781675613461923440, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -13967,15 +13967,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6900135328383742923, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6900135328383742923, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6900135328383742923, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8484446066543109633, guid: b568f52bd2b483f48bae2c06e2108d89, type: 3}
       propertyPath: aManager
