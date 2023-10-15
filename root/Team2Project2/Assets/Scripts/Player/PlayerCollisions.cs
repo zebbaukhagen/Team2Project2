@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerCollisions : MonoBehaviour
 {
     [SerializeField] private UILevelController uiLevelController;
+    
 
     [SerializeField] Transform respawnPoint;
     private void Awake()

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private bool levelOneCompleted = false;
     private bool levelTwoCompleted = false;
     private bool levelThreeCompleted = false;
+    
 
     public List<bool> ListOfLevelsCompleted
     {
@@ -38,6 +39,8 @@ public class GameManager : MonoBehaviour
         audioManager = AudioManager.instance;
         Debug.Log("audioManager instance is equal to " + audioManager);
         InitializeLevelCompletionList();
+        Debug.Log(ListOfLevelsCompleted[0]);
+        
     }
 
     private void Update()
@@ -79,7 +82,7 @@ public class GameManager : MonoBehaviour
     {
         // marks the corresponding level as completed for level select
         listOfLevelsCompleted[levelToMark] = true;
-        Debug.Log("level one completed? " + levelOneCompleted);
+        Debug.Log("level one completed? " + listOfLevelsCompleted[levelToMark]);
     }
 
     private void CheatCodes()
@@ -104,5 +107,10 @@ public class GameManager : MonoBehaviour
         {
             LoadLevel(4);
         }
+    }
+
+    public void PrintContentsOfList()
+    {
+        Debug.Log(ListOfLevelsCompleted[0]);
     }
 }

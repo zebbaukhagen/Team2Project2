@@ -20,6 +20,7 @@ public class LevelSelect : MonoBehaviour
     {
         foreach (bool level in gameManager.ListOfLevelsCompleted)
         {
+            Debug.Log("I am getting to this point");
             int currentIndex = gameManager.ListOfLevelsCompleted.IndexOf(level);
             if (level)
             {
