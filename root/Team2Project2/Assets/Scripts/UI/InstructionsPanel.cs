@@ -32,25 +32,25 @@ public class InstructionsPanel : MonoBehaviour
     public void LevelOneSelected()
     {
         levelTitleText.text = " Level One: Escape the Flames";
-        levelDetails.text = "Complete the following binary puzzles to turn off the fires that are blocking the doors and make it to the exit to progress to Level Two";
+        levelDetails.text = "Complete the following binary puzzles to turn off the fires blocking the doors, and scamper your way to the exit progressing to Level Two";
     }
 
     public void LevelTwoSelected()
     {
-        levelTitleText.text = " Level Two: Connect the Conduits";
-        levelDetails.text = "Complete the electrical current to unlock the main door, and progress to Level Three";
+        levelTitleText.text = " Level Two: Connect the Electric Conduits";
+        levelDetails.text = "Complete the electrical current puzzles in each area of the room by moving the tiles around the designated play section of each zone, and make your way to Level Three";
     }
 
     public void LevelThreeSelected() 
     {
         levelTitleText.text = " Level Three: Avoid the Roombas!";
-        levelDetails.text = "Maneuver through the maze, collecting fuse pickups that are needed to unlock the Scientist Lab. Avoid the Roombas, make your escape, then extract revenge on your abuser ";
+        levelDetails.text = "Maneuver through the maze, and move the fuses to their designated color location. The fuse are needed to unlock the Scientist's Lab. Avoid the Roombas traveling around the room, then exact your revenge on your abuser.";
     }
 
     public void GameControls()
     {
         levelTitleText.text = "Game Controls";
-        levelDetails.text = "Press A to Move LEFT, \n" +
+        levelDetails.text = "Press A to move LEFT, \n" +
             "Press W to move UP, \n" +
             "Press S to move DOWN, \n" +
             "Press D to move RIGHT.\n" +

@@ -605,7 +605,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dd993ff99fa1a684ca1d8d11e3f8447a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -707,7 +707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &179392415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,7 +761,6 @@ RectTransform:
   - {fileID: 1926730354}
   - {fileID: 1832872761}
   - {fileID: 1623809685}
-  - {fileID: 977136790}
   - {fileID: 1994661170}
   m_Father: {fileID: 1643600209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2397,16 +2396,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977136787}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 179392417}
+  m_Father: {fileID: 1994661170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 391.3444, y: -51.82}
+  m_AnchoredPosition: {x: 548.3082, y: 29.635674}
   m_SizeDelta: {x: 699.9461, y: 487.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1039645082
@@ -5477,7 +5476,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "LAB RATDEMPTION 2: \nTHE PAY-BACK"
+  m_text: "LAB RATDEMPTION 2: \nTHE PAY- BACK"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7201,6 +7200,7 @@ RectTransform:
   - {fileID: 1178489690}
   - {fileID: 1262209774}
   - {fileID: 470316563}
+  - {fileID: 977136790}
   m_Father: {fileID: 179392417}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.47472844, y: 0.06432399}
