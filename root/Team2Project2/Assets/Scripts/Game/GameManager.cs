@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private bool levelOneCompleted = false;
     private bool levelTwoCompleted = false;
     private bool levelThreeCompleted = false;
+    //[SerializeField] private GameObject playerCollisions;
     
 
     public List<bool> ListOfLevelsCompleted
@@ -115,5 +116,9 @@ public class GameManager : MonoBehaviour
         {
             LoadLevel(6);
         }
+        //if(Input.GetKeyDown(KeyCode.M))
+        //{
+        //    playerCollisions.GetComponentInChildren<PlayerCollisions>().SetLevelCompleted();
+        //}
     }
 }

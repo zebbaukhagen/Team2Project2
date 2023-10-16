@@ -16,22 +16,25 @@ public class LevelSelect : MonoBehaviour
         gameManager = GameManager.instance;
     }
 
-    private void Update()
+    private void OnEnable()
     {
         InitializeButtons();
     }
 
     private void InitializeButtons()
     {
+        int currentIndex = 0;
         foreach (bool level in gameManager.ListOfLevelsCompleted)
         {
-            Debug.Log("I am getting to this point");
-            int currentIndex = gameManager.ListOfLevelsCompleted.IndexOf(level);
+            Debug.Log("I am in the for loop" + level);
+            
+            Debug.Log(currentIndex + " " + level);  
             if (level)
             {
                 levelImages[currentIndex].sprite = coloredImages[currentIndex];
                 levelButtons[currentIndex].interactable = true;
             }
+            currentIndex++;
         }
     }
 

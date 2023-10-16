@@ -33,7 +33,7 @@ public class PlayerCollisions : MonoBehaviour
         gameObject.transform.position = respawnPoint.position;
     }
 
-    private void SetLevelCompleted()
+    public void SetLevelCompleted()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         GameManager.instance.MarkPuzzleComplete(currentScene - 3);
